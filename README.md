@@ -35,6 +35,7 @@
     - Errors must be cleared before any other operation can take place
 
 * Each operation should automatically update the display
+* YOU MAY NEED to break your code into several .py files so that you can do your `git` stuff easier.
 
 
 ### Scientific Features
