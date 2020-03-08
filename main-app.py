@@ -235,121 +235,130 @@ def memory_use(memory):
     choice = ""
     print_options()
     choice = ""
-    while True:
-        try:
-            choice = input("Enter the number of choice: ")
-            if choice == "MC" or choice == "M+" or choice == "MRC":
-                str(choice)
-            else:
-                choice = int(choice)
-        except ValueError:
-            print("Enter a valid number: ")
-        if choice == 1:
-            n2 = float(input("Enter the second number to add : "))
-            x = cal.add(mem, n2)
-            contin(x)
-        elif choice == 2:
-            n1 = memory
-            n2 = float(input("Enter the second number to subtract : "))
-            x = cal.sub(n1, n2)
-            contin(x)
-        elif choice == 3:
-            n1 = memory
-            n2 = float(input("Enter the second number to multiply : "))
-            x = cal.mul(n1, n2)
-            contin(x)
-        elif choice == 4:
-            n1 = memory
-            n2 = float(input("Enter the second number for division : "))
-            x = cal.div(n1, n2)
-            contin(x)
-        elif choice == 5:
-            n = memory
-            x = cal.sinrad(n)
-            contin(x)
-        elif choice == 6:
-            n = memory
-            x = cal.cosrad(n)
-            contin(x)
-        elif choice == 7:
-            n = memory
-            x = cal.tanrad(n)
-            contin(x)
-        elif choice == 8:
-            n = memory
-            x = cal.cosecrad(n)
-            contin(x)
-        elif choice == 9:
-            n = memory
-            x = cal.secrad(n)
-            contin(x)
-        elif choice == 10:
-            n = memory
-            x = cal.cotrad(n)
-            contin(x)
-        elif choice == 11:
-            x = cal.pie()
-            contin(x)
-        elif choice == 12:
-            n = memory
-            x = cal.sindeg(n)
-            contin(x)
-        elif choice == 13:
-            n = memory
-            x = cal.cosdeg(n)
-            contin(x)
-        elif choice == 14:
-            n = memory
-            x = cal.tandeg(n)
-            contin(x)
-        elif choice == 15:
-            n = memory
-            x = cal.cosecdeg(n)
-            contin(x)
-        elif choice == 16:
-            n = memory
-            x = cal.secdeg(n)
-            contin(x)
-        elif choice == 17:
-            n = memory
-            x = cal.cotdeg(n)
-            contin(x)
-        elif choice == 18:
-            n = memory
-            x = cal.ln(n)
-            contin(x)
-        elif choice == 19:
-            n = memory
-            x = cal.logten(n)
-            contin(x)
-        elif choice == 20:
-            n1 = memory
-            n2 = float(input("Enter a number to find its log to the given log value : "))
-            x = cal.logbasex(n1, n2) # steps are made like functions
-            contin(x)
-        elif choice == 21:
-            n = memory
-            x = cal.squareroot(n)
-            contin(x)
-        elif choice == 22:
-            n1 = memory
-            n2 = float(input("Enter its power"))
-            x = cal.powerof(n1, n2)
-            contin(x)
-        elif choice == 23:
-            memory_use(mem)
+    try:
+        choice = input("Enter the number of choice: ")
+        if choice == "MC" or choice == "M+" or choice == "MRC":
+            str(choice)
         else:
-            print("ERROR : Please enter a valid number")
+            choice = int(choice)
+    except ValueError:
+        print("Enter a valid number: ")
+    if choice == 1:
+        y = input("Enter the second number to add : ")
+        n2 = test_answer(y, "to add", "second")
+        x = cal.add(mem, n2)
+        contin(x)
+    elif choice == 2:
+        n1 = mem
+        y = input("Enter the second number to subtract : ")
+        n2 = test_answer(y, "to subtract", "second")
+        x = cal.sub(mem, n2)
+        contin(x)
+    elif choice == 3:
+        n1 = mem
+        y = input("Enter the second number to multiply : ")
+        n2 = test_answer(y,"to multiply","second")
+        x = cal.mul(mem, n2)
+        contin(x)
+    elif choice == 4:
+        n1 = memory
+        y = input("Enter the second number for division : ")
+        n2 = test_answer(y,"for division", "second")
+        x = cal.div(mem, n2)
+        contin(x)
+    elif choice == 5:
+        n = mem
+        x = cal.sinrad(n)
+        contin(x)
+    elif choice == 6:
+        n = memory
+        x = cal.cosrad(n)
+        contin(x)
+    elif choice == 7:
+        n = memory
+        x = cal.tanrad(n)
+        contin(x)
+    elif choice == 8:
+        n = memory
+        x = cal.cosecrad(n)
+        contin(x)
+    elif choice == 9:
+        n = memory
+        x = cal.secrad(n)
+        contin(x)
+    elif choice == 10:
+        n = memory
+        x = cal.cotrad(n)
+        contin(x)
+    elif choice == 11:
+        x = cal.pie()
+        contin(x)
+    elif choice == 12:
+        n = memory
+        x = cal.sindeg(n)
+        contin(x)
+    elif choice == 13:
+        n = memory
+        x = cal.cosdeg(n)
+        contin(x)
+    elif choice == 14:
+        n = memory
+        x = cal.tandeg(n)
+        contin(x)
+    elif choice == 15:
+        n = memory
+        x = cal.cosecdeg(n)
+        contin(x)
+    elif choice == 16:
+        n = memory
+        x = cal.secdeg(n)
+        contin(x)
+    elif choice == 17:
+        n = memory
+        x = cal.cotdeg(n)
+        contin(x)
+    elif choice == 18:
+        n = memory
+        x = cal.ln(n)
+        contin(x)
+    elif choice == 19:
+        n = memory
+        x = cal.logten(n)
+        contin(x)
+    elif choice == 20:
+        n1 = memory
+        n2 = input("Enter a number to find its log to this given log value : ")
+        x = cal.logbasex(n1, n2) # steps are made like functions
+        contin(x)
+    elif choice == 21:
+        n = memory
+        x = cal.squareroot(n)
+        contin(x)
+    elif choice == 22:
+        n1 = memory
+        y = input("Enter a number to serve as exponent : ")
+        n2 = test_answer(y, "Enter a number to serve as exponent", "")
+        x = cal.powerof(n1, n2)
+        int(x)
+        contin(x)
+    elif choice == "MC":
+        memory_clear()
+    elif choice == "M+":
+        mem
+        int(mem)
+        memory_use(mem)
+    elif choice == "MRC":
+        memory_recall()
+    else:
+        print("ERROR : Please enter a valid number")
 
 def test_answer(x, funct, place):
-    condition = False
-    while condition == False:
+    while type(x) == str:
         try:
             x  = float(x)
         except ValueError:
             print("Error: Please Enter Valid number")
-            x = input("Enter " + place + " number to" + funct + ":\n")
-        condition = True
+            x = input("Enter " + place + " number to " + funct + ":\n")
     return float(x)
 
 
@@ -493,9 +502,8 @@ while True:
     elif choice == 20:
         z = input("Enter base value : ")
         n1 = test_answer(z, "use as base value", "")
-        y = input("Enter a number to find its log to the given log value : ")
+        n2 = input("Enter a number to find its log to this given log value : ")
         n2 = test_answer(y, "to serve as the exponent in log function", "")
-        x = cal.div(n1, n2)
         x = cal.logbasex(n1, n2)
         contin(x)
     elif choice == 21:
@@ -505,8 +513,6 @@ while True:
         x = cal.squareroot(n)
         contin(x)
     elif choice == 22:
-        n1 = float(input("Enter a number : "))
-        n2 = float(input("Enter its power"))
         z = input("Enter base value : ")
         n1 = test_answer(z, "use as base value", "")
         y = input("Enter a number to serve as exponent : ")
@@ -516,6 +522,8 @@ while True:
     elif choice == "MC":
         memory_clear()
     elif choice == "M+":
+        mem
+        int(mem)
         memory_use(mem)
     elif choice == "MRC":
         memory_recall()
