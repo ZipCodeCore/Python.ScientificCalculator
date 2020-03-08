@@ -180,36 +180,197 @@ def convertdisplay(l,ber):
     if l == 5:
         memory_ask(ber)
 
+def memory_clear():
+    global mem
+    mem = 0
+    print_options()
+def memory_recall():
+    global mem
+    print(str(mem) + " is in memory")
+    int(mem)
+    print_options()
 
-def memory_ask(input):
-    pass
+def print_options():
+    print("List of choice:")
+    print('-' * 20)
+    print("1 : Addition \t\t  12 : Sine in degrees")
+    print("2 : Subtraction \t  13 : Cosine in degrees")
+    print("3 : Multiplication \t  14 : Tan in degrees")
+    print("4 : Division \t\t  15 : Cosecant in degrees")
+    print("5 : Sine in radians \t  16: Secant in degrees")
+    print("6 : Cosine in radians \t  17 : cot in degrees")
+    print("7 : Tan in radians \t  18 : Natural log")
+    print("8 : Cosecant in radians   19 : Base 10 log")
+    print("9 : Secant in radians \t  20 : Log base'x'")
+    print("10 : Cot in radians \t  21 : Square root")
+    print("11 : pi \t\t  22 : Power of")
+    print("MRC : To recall memory    M+ : To use number stored in memory")
+    print("MC : to Clear Memory      ^C : to Power off   ")
+    print('-' * 20)
 
-print("Scientific calculator")
-print("List of choice:")
-print('-' * 20)
-print("1 : Addition \t\t  12 : Sine in degrees")
-print("2 : Subtraction \t  13 : Cosine in degrees")
-print("3 : Multiplication \t  14 : Tan in degrees")
-print("4 : Division \t\t  15 : Cosecant in degrees")
-print("5 : Sine in radians \t  16: Secant in degrees")
-print("6 : Cosine in radians \t  17 : cot in degrees")
-print("7 : Tan in radians \t  18 : Natural log")
-print("8 : Cosecant in radians   19 : Base 10 log")
-print("9 : Secant in radians \t  20 : Log base'x'")
-print("10 : Cot in radians \t  21 : Square root")
-print("11 : pi \t\t  22 : Power of")
-print("                          23 : To use number stored in memory")
-print("MC : to Clear Memory     ^C : to Power off   ")
-print('-' * 20)
+
+def memory_ask(x):
+    response = input("Would you like to stor this number in memory? Y/N\n")
+    if response == "Y":
+        global mem
+        mem = x
+        print_options()
+    elif response== "N":
+        cal = Calculator()
+        print_options()
+    else:
+        memory_ask(x)
+
+
+
+
+def memory_use(memory):
+    global mem
+    print(str(mem) + " in memory")
+    mem = int(mem)
+    choice = ""
+    print_options()
+    choice = ""
+    while True:
+        try:
+            choice = input("Enter the number of choice: ")
+            if choice == "MC" or choice == "M+" or choice == "MRC":
+                str(choice)
+            else:
+                choice = int(choice)
+        except ValueError:
+            print("Enter a valid number: ")
+        if choice == 1:
+            n2 = float(input("Enter the second number to add : "))
+            x = cal.add(mem, n2)
+            contin(x)
+        elif choice == 2:
+            n1 = memory
+            n2 = float(input("Enter the second number to subtract : "))
+            x = cal.sub(n1, n2)
+            contin(x)
+        elif choice == 3:
+            n1 = memory
+            n2 = float(input("Enter the second number to multiply : "))
+            x = cal.mul(n1, n2)
+            contin(x)
+        elif choice == 4:
+            n1 = memory
+            n2 = float(input("Enter the second number for division : "))
+            x = cal.div(n1, n2)
+            contin(x)
+        elif choice == 5:
+            n = memory
+            x = cal.sinrad(n)
+            contin(x)
+        elif choice == 6:
+            n = memory
+            x = cal.cosrad(n)
+            contin(x)
+        elif choice == 7:
+            n = memory
+            x = cal.tanrad(n)
+            contin(x)
+        elif choice == 8:
+            n = memory
+            x = cal.cosecrad(n)
+            contin(x)
+        elif choice == 9:
+            n = memory
+            x = cal.secrad(n)
+            contin(x)
+        elif choice == 10:
+            n = memory
+            x = cal.cotrad(n)
+            contin(x)
+        elif choice == 11:
+            x = cal.pie()
+            contin(x)
+        elif choice == 12:
+            n = memory
+            x = cal.sindeg(n)
+            contin(x)
+        elif choice == 13:
+            n = memory
+            x = cal.cosdeg(n)
+            contin(x)
+        elif choice == 14:
+            n = memory
+            x = cal.tandeg(n)
+            contin(x)
+        elif choice == 15:
+            n = memory
+            x = cal.cosecdeg(n)
+            contin(x)
+        elif choice == 16:
+            n = memory
+            x = cal.secdeg(n)
+            contin(x)
+        elif choice == 17:
+            n = memory
+            x = cal.cotdeg(n)
+            contin(x)
+        elif choice == 18:
+            n = memory
+            x = cal.ln(n)
+            contin(x)
+        elif choice == 19:
+            n = memory
+            x = cal.logten(n)
+            contin(x)
+        elif choice == 20:
+            n1 = memory
+            n2 = float(input("Enter a number to find its log to the given log value : "))
+            x = cal.logbasex(n1, n2) # steps are made like functions
+            contin(x)
+        elif choice == 21:
+            n = memory
+            x = cal.squareroot(n)
+            contin(x)
+        elif choice == 22:
+            n1 = memory
+            n2 = float(input("Enter its power"))
+            x = cal.powerof(n1, n2)
+            contin(x)
+        elif choice == 23:
+            memory_use(mem)
+        else:
+            print("ERROR : Please enter a valid number")
+
+
+def first_ask(funct):
+    num1 = int(input("What is the first number for " + funct + "\n"))
+    if type(num1) == int:
+        return num1
+    else:
+        first_ask(funct)
+
+def second_ask(funct):
+    num2 = int(input("What is the second number for " + funct + "\n"))
+    if type(num2) == int:
+        return num2
+    else:
+        second_ask(funct)
+
+def one_variable_ask(funct):
+
+
+
+print_options()
 choice = ""
 while True:
     try:
-        choice = int(input("Enter the number of choice: "))
+        choice = input("Enter the number of choice: ")
+        if choice == "MC" or choice == "M+" or choice == "MRC":
+            pass
+        else:
+            choice = int(choice)
     except ValueError:
         print("Enter a valid number: ")
     if choice == 1:
-        n1 = float(input("Enter the first number to add : "))
-        n2 = float(input("Enter the second number to add : "))
+        addition_string = "addition"
+        n1 = first_ask(addition_string)
+        n2 = second_ask(addition_string)
         x = cal.add(n1, n2)
         contin(x)
     elif choice == 2:
@@ -289,7 +450,7 @@ while True:
     elif choice == 20:
         n1 = float(input("Enter base value : "))
         n2 = float(input("Enter a number to find its log to the given log value : "))
-        x = cal.logbasex(n1, n2) # steps are made like functions
+        x = cal.logbasex(n1, n2)
         contin(x)
     elif choice == 21:
         n = float(input("Enter a number to get it's Square root : "))
@@ -301,8 +462,10 @@ while True:
         x = cal.powerof(n1, n2)
         contin(x)
     elif choice == "MC":
-        mem = 0
-    elif choice == 23:
+        memory_clear()
+    elif choice == "M+":
         memory_use(mem)
+    elif choice == "MRC":
+        memory_recall()
     else:
         print("ERROR : Please enter a valid number")
