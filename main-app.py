@@ -129,19 +129,23 @@ def contin(y):
 
 def contined(picked,y):
     if picked == 1:
-        num2 = int(input("What number would you like to add?\n"))
+        x = input("What number would you like to add?\n")
+        num2 = test_answer(x,"add", "next")
         z = cal.add(int(y),int(num2))
         contin(z)
     elif picked == 2:
-        num2 = int(input("What number would you like to subtract?\n"))
+        x = input("What number would you like to add?\n")
+        num2 = test_answer(x, "subtract", "next")
         z = cal.sub(int(y),int(num2))
         contin(z)
     elif picked == 3:
-        num2 = int(input("What number would you like to multiply by?\n"))
+        x = input("What number would you like to multiply by?\n")
+        num2 = test_answer(x, "multiply by", "next")
         z = cal.mul(int(y), int(num2))
         contin(z)
     elif picked == 4:
-        num2 = int(input("What number would you like to divide by?\n"))
+        x = input("What number would you like to add?\n")
+        num2 = test_answer(x, "divide by", "next")
         z = cal.div(int(y), int(num2))
         contin(z)
     elif picked == 5:
@@ -337,22 +341,22 @@ def memory_use(memory):
         else:
             print("ERROR : Please enter a valid number")
 
+def test_answer(x, funct, place):
+    condition = False
+    while condition == False:
+        try:
+            x  = float(x)
+        except ValueError:
+            print("Error: Please Enter Valid number")
+            x = input("Enter " + place + " number to" + funct + ":\n")
+        condition = True
+    return float(x)
 
-def first_ask(funct):
-    num1 = int(input("What is the first number for " + funct + "\n"))
-    if type(num1) == int:
-        return num1
-    else:
-        first_ask(funct)
 
-def second_ask(funct):
-    num2 = int(input("What is the second number for " + funct + "\n"))
-    if type(num2) == int:
-        return num2
-    else:
-        second_ask(funct)
 
-def one_variable_ask(funct):
+
+
+
 
 
 
@@ -366,99 +370,147 @@ while True:
         else:
             choice = int(choice)
     except ValueError:
-        print("Enter a valid number: ")
+        print("ERROR : Please enter a valid number")
     if choice == 1:
-        addition_string = "addition"
-        n1 = first_ask(addition_string)
-        n2 = second_ask(addition_string)
+        function_string = "add"
+        z = input("Enter the first number to add : ")
+        n1 = test_answer(z,function_string,"first")
+        y = input("Enter the second number to add : ")
+        n2 = test_answer(y,function_string, "second")
         x = cal.add(n1, n2)
         contin(x)
     elif choice == 2:
-        n1 = float(input("Enter the first number to subtract : "))
-        n2 = float(input("Enter the second number to subtract : "))
+        function_string = "subtract"
+        z = input("Enter the first number in subtraction : ")
+        n1 = test_answer(z, function_string, "first")
+        y = input("Enter the second number in subraction : ")
+        n2 = test_answer(y, function_string, "second")
         x = cal.sub(n1, n2)
         contin(x)
     elif choice == 3:
-        n1 = float(input("Enter the first number to multiply : "))
-        n2 = float(input("Enter the second number to multiply : "))
+        function_string = "multiply by"
+        z = input("Enter the first number to " + function_string+ " : ")
+        n1 = test_answer(z, function_string, "first")
+        y = input("Enter the second number number to " + function_string+ " : ")
+        n2 = test_answer(y, function_string, "second")
         x = cal.mul(n1, n2)
         contin(x)
     elif choice == 4:
-        n1 = float(input("Enter the first number for division : "))
-        n2 = float(input("Enter the second number for division : "))
+        function_string = "divide by"
+        z = input("Enter the first number to " + function_string + " : ")
+        n1 = test_answer(z, function_string, "first")
+        y = input("Enter the second number number to " + function_string + " : ")
+        n2 = test_answer(y, function_string, "second")
         x = cal.div(n1, n2)
         contin(x)
     elif choice == 5:
-        n = float(input("Enter a number to find its Sine in radians : "))
+        function_string = "find Sine its in Radian"
+        z = input("Enter a number to "+ function_string + " : ")
+        n = test_answer(z,function_string,"")
         x = cal.sinrad(n)
         contin(x)
     elif choice == 6:
-        n = float(input("Enter a number to find its Cos in radians : "))
+        function_string = "find its Cos in radians"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cosrad(n)
         contin(x)
     elif choice == 7:
-        n = float(input("Enter a number to find its Tan in radians : "))
+        function_string = "find its Tan in radians"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.tanrad(n)
         contin(x)
     elif choice == 8:
-        n = float(input("Enter a number to find its Cosecant in radians : "))
+        function_string = "find its Cosecant in radians"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cosecrad(n)
         contin(x)
     elif choice == 9:
-        n = float(input("Enter a number to find its Secant in radians : "))
+        function_string = "find its Secant in radians"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.secrad(n)
         contin(x)
     elif choice == 10:
-        n = float(input("Enter a number to find its Cot in radians : "))
+        function_string = "find its Cot in radians"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cotrad(n)
         contin(x)
     elif choice == 11:
         x = cal.pie()
         contin(x)
     elif choice == 12:
-        n = float(input("Enter a number to find its Sine in degrees : "))
+        function_string = "find its Sine in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.sindeg(n)
         contin(x)
     elif choice == 13:
-        n = float(input("Enter a number to find its Cosine in degrees : "))
+        function_string = "find its Cosine in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cosdeg(n)
         contin(x)
     elif choice == 14:
-        n = float(input("Enter a number to find its Tan in degrees : "))
+        function_string = "find its Tan in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.tandeg(n)
         contin(x)
     elif choice == 15:
-        n = float(input("Enter a number to find its Cosecant in degrees : "))
+        function_string = "find its Cosecant in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cosecdeg(n)
         contin(x)
     elif choice == 16:
-        n = float(input("Enter a number to find its Secant in degrees : "))
+        function_string = "find its Secant in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.secdeg(n)
         contin(x)
     elif choice == 17:
-        n = float(input("Enter a number to find its Cot in degrees : "))
+        function_string = "find its Cot in degrees"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.cotdeg(n)
         contin(x)
     elif choice == 18:
-        n = float(input("Enter a number to find its Natural in log : "))
+        function_string = "find its Natural in log"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.ln(n)
         contin(x)
     elif choice == 19:
-        n = float(input("Enter a number to find its Base 10 log : "))
+        function_string = "find its Base 10 log"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.logten(n)
         contin(x)
     elif choice == 20:
-        n1 = float(input("Enter base value : "))
-        n2 = float(input("Enter a number to find its log to the given log value : "))
+        z = input("Enter base value : ")
+        n1 = test_answer(z, "use as base value", "")
+        y = input("Enter a number to find its log to the given log value : ")
+        n2 = test_answer(y, "to serve as the exponent in log function", "")
+        x = cal.div(n1, n2)
         x = cal.logbasex(n1, n2)
         contin(x)
     elif choice == 21:
-        n = float(input("Enter a number to get it's Square root : "))
+        function_string = "find its square root"
+        z = input("Enter a number to " + function_string + " : ")
+        n = test_answer(z, function_string, "")
         x = cal.squareroot(n)
         contin(x)
     elif choice == 22:
         n1 = float(input("Enter a number : "))
         n2 = float(input("Enter its power"))
+        z = input("Enter base value : ")
+        n1 = test_answer(z, "use as base value", "")
+        y = input("Enter a number to serve as exponent : ")
+        n2 = test_answer(y, "Enter a number to serve as exponent", "")
         x = cal.powerof(n1, n2)
         contin(x)
     elif choice == "MC":
@@ -468,4 +520,4 @@ while True:
     elif choice == "MRC":
         memory_recall()
     else:
-        print("ERROR : Please enter a valid number")
+        pass
