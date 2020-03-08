@@ -134,7 +134,7 @@ def contin(y):
         print("10 : Cot in radians \t  21 : Square root")
         print("11 : pi \t\t  22 : Power of")
     elif cont == 2:
-        fun = int(input("1 : Addition \t\t 2 : Subtraction\n3 : Multiplication \t 4 : Division\n5 : Square root \t 6 : Squared\n"))
+        fun = int(input("1 : Addition \t\t 2 : Subtraction\n3 : Multiplication \t 4 : Division\n5 : Square root \t 6 : Squared\n7:  Invert Sign"))
         contined(fun,y)
     else:
         print("Sorry try again")
@@ -162,6 +162,10 @@ def contined(picked,y):
         contin(z)
     if picked == 6:
         z = cal.square(int(y))
+        contin(z)
+    if picked == 7:
+        z = y*-1
+        print z
         contin(z)
 
 
