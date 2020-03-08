@@ -1,5 +1,7 @@
 import math
+import decimal
 
+mem = 0
 
 class Calculator(object):
     def add(self, num1, num2):
@@ -110,7 +112,6 @@ class Calculator(object):
         print('e = ', math.e)
         return answer
 
-
 cal = Calculator()
 
 
@@ -118,23 +119,9 @@ def contin(y):
     cal = Calculator()
     cont = int(input("If you would like to stop type 1\nIf you would like to contine type 2\n"))
     if cont == 1:
-        cal = Calculator()
-        print("Scientific calculator")
-        print("List of choice:")
-        print('-' * 20)
-        print("1 : Addition \t\t  12 : Sine in degrees")
-        print("2 : Subtraction \t  13 : Cosine in degrees")
-        print("3 : Multiplication \t  14 : Tan in degrees")
-        print("4 : Division \t\t  15 : Cosecant in degrees")
-        print("5 : Sine in radians \t  16: Secant in degrees")
-        print("6 : Cosine in radians \t  17 : cot in degrees")
-        print("7 : Tan in radians \t  18 : Natural log")
-        print("8 : Cosecant in radians   19 : Base 10 log")
-        print("9 : Secant in radians \t  20 : Log base'x'")
-        print("10 : Cot in radians \t  21 : Square root")
-        print("11 : pi \t\t  22 : Power of")
+       switchdisplaymode(y)
     elif cont == 2:
-        fun = int(input("1 : Addition \t\t 2 : Subtraction\n3 : Multiplication \t 4 : Division\n5 : Square root \t 6 : Squared\n7:  Invert Sign"))
+        fun = int(input("1 : Addition \t\t 2 : Subtraction\n3 : Multiplication \t 4 : Division\n5 : Square root \t 6 : Squared\n7:  Invert Sign\n"))
         contined(fun,y)
     else:
         print("Sorry try again")
@@ -145,32 +132,57 @@ def contined(picked,y):
         num2 = int(input("What number would you like to add?\n"))
         z = cal.add(int(y),int(num2))
         contin(z)
-    if picked == 2:
+    elif picked == 2:
         num2 = int(input("What number would you like to subtract?\n"))
         z = cal.sub(int(y),int(num2))
         contin(z)
-    if picked == 3:
+    elif picked == 3:
         num2 = int(input("What number would you like to multiply by?\n"))
         z = cal.mul(int(y), int(num2))
         contin(z)
-    if picked == 4:
+    elif picked == 4:
         num2 = int(input("What number would you like to divide by?\n"))
         z = cal.div(int(y), int(num2))
         contin(z)
-    if picked == 5:
+    elif picked == 5:
         z = cal.squareroot(int(y))
         contin(z)
-    if picked == 6:
+    elif picked == 6:
         z = cal.square(int(y))
         contin(z)
-    if picked == 7:
+    elif picked == 7:
         z = y*-1
-        print z
+        print (z)
         contin(z)
 
+def switchdisplaymode(x):
+    displaypick = int(input("What display would you like to use?\n 1. Binary\n 2. Octal\n 3. Decimal\n 4. Hexadecimal\n 5. Continue to Memory \n"))
+    convertdisplay(displaypick,x)
+
+def convertdisplay(l,ber):
+    ber = int(ber)
+    if l == 1:
+        b = bin(ber)
+        print(b)
+        switchdisplaymode(ber)
+    if l == 2:
+        b = oct(ber)
+        print(b)
+        switchdisplaymode(ber)
+    if l == 3:
+        b = decimal.Decimal(ber)
+        print(b)
+        switchdisplaymode(ber)
+    if l == 4:
+        b = hex(ber)
+        print(b)
+        switchdisplaymode(ber)
+    if l == 5:
+        memory_ask(ber)
 
 
-
+def memory_ask(input):
+    pass
 
 print("Scientific calculator")
 print("List of choice:")
@@ -186,6 +198,8 @@ print("8 : Cosecant in radians   19 : Base 10 log")
 print("9 : Secant in radians \t  20 : Log base'x'")
 print("10 : Cot in radians \t  21 : Square root")
 print("11 : pi \t\t  22 : Power of")
+print("                          23 : To use number stored in memory")
+print("MC : to Clear Memory     ^C : to Power off   ")
 print('-' * 20)
 choice = ""
 while True:
@@ -286,5 +300,9 @@ while True:
         n2 = float(input("Enter its power"))
         x = cal.powerof(n1, n2)
         contin(x)
+    elif choice == "MC":
+        mem = 0
+    elif choice == 23:
+        memory_use(mem)
     else:
-        print("ERROR : Please enter a valid number ")
+        print("ERROR : Please enter a valid number")
