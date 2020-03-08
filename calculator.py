@@ -1,5 +1,6 @@
 import math
 
+
 class Calculator(object):
     def add(self, num1, num2):
         answer = num1 + num2
@@ -80,3 +81,4 @@ class Calculator(object):
         print('pi = ', math.pi)
     def e_constant(self):
         print('e = ', math.e)
+

@@ -1,5 +1,5 @@
 # import the class
-from calc import calc
+from calculator import calc
 
 cal = calc()
 print("Scientific calculator")
@@ -96,4 +96,4 @@ while True:
         cal.powerof(n1, n2)
     else:
         print("ERROR : Please enter a valid number ")
-# Let's merege and test
+
