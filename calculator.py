@@ -11,8 +11,10 @@ class Calculator(object):
         answer = num1 * num2
         print('Multiplication = ', answer)
     def div(self, num1, num2):
-        answer = num1 / num2
-        print('Division = ', answer)
+        if num2 != 0:
+            print('Division = ', (num1 / num2))
+        else:
+            print("Err")
     def powerof(self, num, raiseby):
         answer = math.pow(num, raiseby)
         print('%f ^ %f = %f' % (num, raiseby, answer))
