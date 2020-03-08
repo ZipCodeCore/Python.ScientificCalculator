@@ -40,10 +40,10 @@ class Calculator(object):
         print('Inverse Sine(%f) = %f' % (num, answer))
     def secrad(self, num):
         answer = 1/(math.cos(num))
-        print('Inverse Cosine(%f) = %f' % (numb, answer))
+        print('Inverse Cosine(%f) = %f' % (num, answer))
     def cotrad(self, num):
         answer = 1/(math.tan(num))
-        print('Inverse Tangent(%f) = %f' % (numb, answer))
+        print('Inverse Tangent(%f) = %f' % (num, answer))
     def sindeg(self, num):
         answer = math.sin(math.radians(num))
         print('Sin(%f) in Degrees = %f' % (num, answer))
@@ -57,12 +57,12 @@ class Calculator(object):
         answer = 1/(math.sin(math.radians(num)))
         print('Inverse Sine(%f) in Degrees = %f' % (num, answer))
     def secdeg(self, num):
-        answer = 1/(math.cos(math.radians(num))
-        print('Inverse Cosine(%f) in degrees = %f' % (numb, answer))
+        answer = 1/(math.cos(math.radians(num)))
+        print('Inverse Cosine(%f) in degrees = %f' % (num, answer))
     def cotdeg(self, num):
         answer = 1/(math.tan(math.radians(num)))
-        print('Inverse Tangent(%f) in degrees = %f' % (numb, answer))
-    def factorial(self, num)
+        print('Inverse Tangent(%f) in degrees = %f' % (num, answer))
+    def factorial(self, num):
         answer = math.factorial(num)
         print('Factorial (%f) = %f' % (num, answer))
     def ln(self, num):
@@ -70,7 +70,7 @@ class Calculator(object):
         print('Log (%f) = %f' % (num, answer))
     def logten(self, num):
         answer = math.log10(num)
-        print(Log10(%f) = %f' % (num, answer))
+        print('Log10(%f) = %f' % (num, answer))
     def logbasex(self, num, x):
         answer = math.log(num, x)
         print('Log base (%f)(%f) = %f' % (x, num, answer))
