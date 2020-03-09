@@ -134,7 +134,7 @@ def contined(picked,y):
         z = cal.add(int(y),int(num2))
         contin(z)
     elif picked == 2:
-        x = input("What number would you like to add?\n")
+        x = input("What number would you like to subtract?\n")
         num2 = test_answer(x, "subtract", "next")
         z = cal.sub(int(y),int(num2))
         contin(z)
@@ -144,7 +144,7 @@ def contined(picked,y):
         z = cal.mul(int(y), int(num2))
         contin(z)
     elif picked == 4:
-        x = input("What number would you like to add?\n")
+        x = input("What number would you like to divide by?\n")
         num2 = test_answer(x, "divide by", "next")
         z = cal.div(int(y), int(num2))
         contin(z)
