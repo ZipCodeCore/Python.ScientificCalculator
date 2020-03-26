@@ -18,7 +18,10 @@ class Calculator:
 
 # add lots more methods to this calculator class.
 
-#Preeti
+#Fuctions made by Preeti
+
+
+
     def square(self,x):
         result = x ** 2
         print ("Square = ", result)
