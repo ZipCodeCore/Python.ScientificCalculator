@@ -25,7 +25,7 @@ sub(a: float, b:float) -> float
 `inverse` 
 
 `invert_sign`
-
+ 
 ##scientific
 ###Display
 `switch_display_rotate`

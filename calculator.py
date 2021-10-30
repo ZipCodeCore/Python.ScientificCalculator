@@ -1,3 +1,13 @@
+class state:
+    def __init__(self):
+        value = 0
+        display = "0"
+
+    def display_decimal(self):
+
+
+
+
 class Calculator:
 
     def __init__(self):
