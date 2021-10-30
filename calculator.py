@@ -44,3 +44,25 @@ class Calculator:
     def inv(self, x):
         print(self, 1 / x)
         return 1 / x
+
+
+##SECONDARY FORMULAS
+
+    def add2(self, x):
+        print(self, returned_result + x)
+        return returned_result + x
+
+
+    def subtract2(self, x):
+        print(self, returned_result - x)
+        return returned_result - x
+
+
+    def multiply2(self, x):
+        print(self, returned_result * x)
+        return returned_result * x
+
+
+    def divide2(self, x):
+        print(self, returned_result / x)
+        return returned_result / x
