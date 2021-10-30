@@ -19,7 +19,7 @@ while True:
         elif state.command == "add":
             state.add(state.user_entry)
         elif state.command == "sub":
-            sub(state.value,user_entry)
+            state.sub(state.user_entry)
     elif state.user_entry == "exit":
         break
     else:

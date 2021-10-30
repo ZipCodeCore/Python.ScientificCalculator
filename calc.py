@@ -3,9 +3,6 @@ from calculator import state
 state = state()
 
 
-def add(a,b):
-    state.command = None
-    return a + b
 
 
 
@@ -20,9 +17,9 @@ while True:
         if state.command == None:
             state.value = state.user_entry
         elif state.command == "add":
-            state.value = add(state.value,state.user_entry)
+            state.add(state.user_entry)
         elif state.command == "sub":
-            sub(state.value,user_entry)
+            state.sub(state.user_entry)
     elif state.user_entry == "exit":
         break
     else:
