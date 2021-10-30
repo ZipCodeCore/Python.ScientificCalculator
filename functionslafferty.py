@@ -1,5 +1,6 @@
 import math
 
+
 def calc(term):
     """
     The term will be the input from the calculator.
@@ -39,12 +40,27 @@ def result(term):  # This passes the argument 'term' to the function 'calc' and 
 
     print("\n" + str(calc(term)))
 
+
 def intro():
     """This is for handling the user data and printing the introduction and input
     """
+
     while True:
+
         print("\n BOO!! Welcome to the Halloween Scientific Calculator!! Input in any format, enter 'quit' to escape!!")
+
         answer = input("\n What do you want to know? ")
+
+        if answer == None:
+
+            print("Display: " + 0)
+
+        display = Tk()
+        root = Tk()
+        root.geometry("312x324")
+        root.resizable(0,0)
+        root.title("CALCULATOR")
+
 
         if answer == 'quit':
             break

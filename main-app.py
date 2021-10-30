@@ -1,4 +1,5 @@
 from calculator import Calculator
+import math
 
 
 def getTwoNumbers():
