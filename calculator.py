@@ -1,4 +1,7 @@
 class state:
+    """
+    initiates a calculator object
+    """
     def __init__(self):
         self.value = 0
         self.command = None
@@ -26,13 +29,17 @@ class state:
         print("current display is:",self.display)
 
 
-
     def error(self):
         self.value = None
         self.command = None
         self.display_mode = "Err"
 
+    def add(self,n):
+        self.value = self.value + n
 
+    def help(self):
+        print("You may enter a number or a command. They command will act on the displayed numnber, or wait for a second number to take action")
+        print("the commands are +, -, *, /, Square, SquareRoot, ^, Invert, ClearError, SwitchSign, Decimal, Binary, Octal, Hex, ToggleDisplayStyle, M+, MC, MRC, Sine, Cosine, Tangent, ASine, ACosine, Atangent, SwitchTrigMode, Rads, Degrees, !, Log, 10^x, Ln, e^x")
 
 class Calculator:
 
