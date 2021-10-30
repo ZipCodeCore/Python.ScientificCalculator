@@ -30,40 +30,38 @@ def performCalcLoop(calc):
 
         elif choice == 'subtract':
             a, b = getTwoNumbers()
-            displayResult(a-b)
+            displayResult(calc.sub(a, b))
 
         elif choice == 'multiply':
             a, b = getTwoNumbers()
-            displayResult(a*b)
+            displayResult(calc.mult(a, b))
 
         elif choice == 'divide':
             a, b = getTwoNumbers()
             if b == 0:
                 print("Err")
             else:
-                displayResult(a/b)
+                displayResult(calc.div(a, b)
 
-# Have to use getOneNumber for certain operations
-
-        elif choice == 'square':
+        elif choice == 'square':            # Have to use getOneNumber for certain operations
             a = getOneNumber()
-            displayResult(a**2)
+            displayResult(calc.sq(a))
 
         elif choice == 'square root':
             a = getOneNumber()
-            displayResult(math.sqrt(a))
+            displayResult(calc.sqrt(a))
 
         elif choice == 'variable exponentiation':
             a, b = getTwoNumbers()
-            displayResult(a**b)
+            displayResult(calc.varexp(a, b))
 
         elif choice == 'inverse':
             a = getOneNumbers()
-            displayResult(1 / a)
+            displayResult(calc.inverse(a))
 
         elif choice == 'invert sign':
             a = getOneNumber()
-            displayResult(a * -1)
+            displayResult(calc.invert_sign(a))
 
         else:
             print("That is not a valid input.")
