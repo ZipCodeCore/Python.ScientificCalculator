@@ -1,20 +1,15 @@
-from calculator import state
+from calculator import State
 
-state = state()
-
-
-
-
-
+state = State()
 
 while True:
     state.print()
-    if state.command != None:
+    if state.command is None:
         print("current command is:", state.command)
     state.user_entry = input("please enter a mathematical function or number (or type help): ")
     if state.user_entry.isnumeric():
         state.user_entry = float(state.user_entry)
-        if state.command == None:
+        if state.command is None:
             state.value = state.user_entry
         elif state.command == "+":
             state.add(state.user_entry)
