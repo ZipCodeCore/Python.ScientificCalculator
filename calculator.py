@@ -36,6 +36,7 @@ class state:
 
     def add(self,n):
         self.value = self.value + n
+        self.command = None
 
     def help(self):
         print("You may enter a number or a command. They command will act on the displayed numnber, or wait for a second number to take action")
