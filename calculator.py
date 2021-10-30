@@ -1,41 +1,46 @@
 import math
 
 class Calculator:
+
     def __init__(self):
         pass
 
-    def add(x, y):
-        print(x + y)
-        return x + y
 
-    def subtract(x, y):
-        print(x - y)
+    def add(self, a, b):
+        print(self, a + b)
+        return a + b
+
+
+    def subtract(self, x, y):
+        print(self, x - y)
         return x - y
 
-    def multiply(x, y):
-        print(x * y)
+
+    def multiply(self, x, y):
+        print(self, x * y)
         return y * x
 
-    def divide(x, y):
-        print(x / y)
+
+    def divide(self, x, y):
+        print(self, x / y)
         return x / y
 
 
-    def square(base):
-        print(base ** 2)
+    def square(self, base):
+        print(self, base ** 2)
         return base ** 2
 
 
-    def exp(x, y):
-        print(x ** y)
+    def exp(self, x, y):
+        print(self, x ** y)
         return x ** y
 
 
-    def square_root(x):
-        print(x ** (1 / 2))
+    def square_root(self, x):
+        print(self, x ** (1 / 2))
         return x ** (1 / 2)
 
 
-    def inv(x):
-        print(1 / x)
+    def inv(self, x):
+        print(self, 1 / x)
         return 1 / x
