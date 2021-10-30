@@ -1,5 +1,4 @@
 from calculator import Calculator
-import math
 
 
 def getTwoNumbers():
@@ -8,7 +7,7 @@ def getTwoNumbers():
     return a, b
 
 
-def getOneNumber():
+def getOneNumber():     # get one number instead
     a = float(input("first number? "))
     return a
 
@@ -41,9 +40,9 @@ def performCalcLoop(calc):
             if b == 0:
                 print("Err")
             else:
-                displayResult(calc.div(a, b)
+                displayResult(calc.div(a, b))
 
-        elif choice == 'square':            # Have to use getOneNumber for certain operations
+        elif choice == 'square':
             a = getOneNumber()
             displayResult(calc.sq(a))
 

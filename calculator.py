@@ -1,5 +1,3 @@
-import * from math
-
 class Calculator:
 
     def __init__(self):
@@ -21,7 +19,7 @@ class Calculator:
         return x**2
 
     def sqrt(self, x):
-        return sqrt(x)
+        return x*x
 
     def varexp(self, x, y):
         return x**y
