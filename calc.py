@@ -20,10 +20,11 @@ while True:
             state.add(state.user_entry)
         elif state.command == "-":
             state.sub(state.user_entry)
-        elif state.command == "HELP":
-            state.help()
-    elif state.user_entry == "EXIT":
+    elif state.user_entry.upper() == "HELP":
+        state.help()
+        continue
+    elif state.user_entry.upper() == "EXIT":
         break
     else:
-        state.command = state.user_entry.capitalize()
+        state.command = state.user_entry.upper()
 print("thanks for pushing all my buttons")
