@@ -1,10 +1,36 @@
 class state:
     def __init__(self):
-        value = 0
-        display = "0"
+        self.value = 0
+        self.command = None
+        self.display_mode = "decimal"
+        self.trig_mode = "rads"
+        self.display = "0"
+        self.user_entry = None
 
-    def display_decimal(self):
 
+    def get_current_value(self):
+        pass
+
+
+    def print(self):
+        if self.display_mode == "decimal":
+            self.display = str(self.value)
+        elif self.display_mode == "hex":
+            self.display = hex(self.value)
+        elif self.display_mode == "binary":
+            pass
+        elif self.display_mode == "octal":
+            pass
+        else:
+            self.error()
+        print("current display is:",self.display)
+
+
+
+    def error(self):
+        self.value = None
+        self.command = None
+        self.display_mode = "Err"
 
 
 
