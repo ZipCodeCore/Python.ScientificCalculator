@@ -30,8 +30,5 @@ class Calculator:
     def invert_sign(self, x):
         return x * -1
 
-    def sub(self, x, y):
-        return a * b
-
 
 # add lots more methods to this calculator class.
