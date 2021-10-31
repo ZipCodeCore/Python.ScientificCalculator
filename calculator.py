@@ -1,3 +1,4 @@
+
 import math
 
 class Calculator:
@@ -197,3 +198,4 @@ class Calculator:
         """
         print( returned_result / x)
         return returned_result / x
+
