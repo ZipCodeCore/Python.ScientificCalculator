@@ -4,7 +4,15 @@ import math
 class Calculator:
 
     def __init__(self):
+
+        error = False
+        value = 0
+
+    def err(self):
+        self.error = True
+
         self.degrees = True
+
 
 
     def add(self, a, b):
@@ -41,14 +49,20 @@ class Calculator:
 
 
     def divide(self, x, y):
+
         """
         DIVIDES TWO NUMBERS AND RETURNS RESULT
         :param x:
         :param y:
         :return:
         """
-        print( x / y)
-        return x / y
+        try:
+            result = x / y
+        except:
+            result = "Err"
+            self.err()
+
+        return result
 
 
     def square(self, base):
@@ -73,6 +87,31 @@ class Calculator:
 
 
     def square_root(self, x):
+        """
+        FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
+        :param x:
+        :return:
+        """
+        try:
+            print(math.sqrt(x))
+        except:
+            self.err()
+            return "Err"
+        return math.sqrt(x)
+
+
+    def inv(self, x):
+        """
+        INVERSES A NUMBER AND RETURNS RESULT
+        :param x:
+        :return:
+        """
+        try:
+            result = 1/x
+        except:
+            self.err()
+            return "Err"
+        print(1 / x)
         """
         FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
         :param x:
