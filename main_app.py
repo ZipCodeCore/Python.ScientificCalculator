@@ -4,6 +4,7 @@ import decimal
 
 calc=Calculator()
 
+
 def enter_num():
     try:
         num1 = float(input())
@@ -11,6 +12,7 @@ def enter_num():
     except:
         calc.err()
 
+##Calculator Options
 
 def screen_options():
     print("1: Add           8: Inverse              15: M+")
@@ -32,7 +34,7 @@ def screen_options():
         x = enter_num()
         print("Enter the second number: ")
         y = enter_num()
-        result = calc.add(x, y)
+        result = calc.add(x ,y)
         return result
 
     elif Operation == 2:
@@ -97,49 +99,92 @@ def screen_options():
         return result
 
 ##TRIG FUNCTIONS
-##must add statements for degrees/radians
+    ##updated with statements for degrees and radians
 
     elif Operation == 9:
         print("Sine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.sine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Sine: ")
+            x = enter_num()
+            result = calc.sine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Sine: ")
+            x = enter_num()
+            result = calc.sine(math.degrees(x))
+            return result
+
 
     elif Operation == 10:
         print("Cosine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.cosine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Cosine: ")
+            x = enter_num()
+            result = calc.cosine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Cosine: ")
+            x = enter_num()
+            result = calc.cosine(math.degrees(x))
+            return result
 
     elif Operation == 11:
         print("Tangent")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.tangent(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Tangent: ")
+            x = enter_num()
+            result = calc.tangent(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Tangent: ")
+            x = enter_num()
+            result = calc.tangent(math.degrees(x))
+            return result
 
     elif Operation == 12:
         print("Inverse Sine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invsine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Sine: ")
+            x = enter_num()
+            result = calc.inverse_sine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Sine: ")
+            x = enter_num()
+            result = calc.inverse_sine(math.degrees(x))
+            return result
 
     elif Operation == 13:
         print("Inverse Cosine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invcosine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Cosine: ")
+            x = enter_num()
+            result = calc.inverse_cosine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Cosine: ")
+            x = enter_num()
+            result = calc.inverse_cosine(math.degrees(x))
+            return result
 
     elif Operation == 14:
         print("Inverse Tangent")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invtangent(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Tangent: ")
+            x = enter_num()
+            result = calc.inverse_tangent(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Tangent: ")
+            x = enter_num()
+            result = calc.inverse_tangent(math.degrees(x))
+            return result
 
 ##MEMORY FUNCTIONS
 
