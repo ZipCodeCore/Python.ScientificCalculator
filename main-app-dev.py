@@ -13,7 +13,7 @@ def getOneNumber():     # get one number instead
 
 
 def displayResult(temp_display: float):
-    print("DISPLAY:\n")
+    print("\nDISPLAY:\n")
     print(temp_display)
 
 
