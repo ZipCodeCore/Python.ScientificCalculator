@@ -1,7 +1,14 @@
 from calculator import Calculator
 import math
+from state import State
 
-calc=Calculator()
+calc = Calculator()
+state = State()
+
+
+
+
+
 
 
 def enter_num():
@@ -32,8 +39,8 @@ def screen_options():
         x = enter_num()
         print("Enter the second number: ")
         y = enter_num()
-        result = calc.add(x ,y)
-        return result
+        state.result = calc.add(x ,y)
+        return state.result
 
     elif Operation == 2:
         print("Subtract")
@@ -41,8 +48,8 @@ def screen_options():
         x = enter_num()
         print("Enter the second number: ")
         y = enter_num()
-        result = calc.subtract(x, y)
-        return result
+        state.result = calc.subtract(x, y)
+        return state.result
 
     elif Operation == 3:
         print("Multiply")
@@ -50,8 +57,8 @@ def screen_options():
         x = enter_num()
         print("Enter the second number: ")
         y = enter_num()
-        result = calc.multiply(x, y)
-        return result
+        state.result = calc.multiply(x, y)
+        return state.result
 
     elif Operation == 4:
         print("Divide")
@@ -63,15 +70,15 @@ def screen_options():
             print("ERROR")
             return None
         else:
-            result = calc.divide(x, y)
-            return result
+            state.result = calc.divide(x, y)
+            return state.result
 
     elif Operation == 5:
         print("Square")
         print("Enter the number: ")
         base = enter_num()
-        result = square(base)
-        return result
+        state.result = square(base)
+        return state.result
 
     elif Operation == 6:
         print("Exponent")
@@ -79,22 +86,22 @@ def screen_options():
         x = enter_num()
         print("Enter the exponent")
         y = enter_num()
-        result = calc.exp(x, y)
-        return result
+        state.result = calc.exp(x, y)
+        return state.result
 
     elif Operation == 7:
         print("Square Root")
         print("Enter the number: ")
         x = enter_num()
-        result = calc.square_root(x)
-        return result
+        state.result = calc.square_root(x)
+        return state.result
 
     elif Operation == 8:
         print("Inverse")
         print("Enter the number: ")
         x = enter_num()
-        result = calc.inv(x)
-        return result
+        state.result = calc.inv(x)
+        return state.result
 
 ##TRIG FUNCTIONS
     ##updated with statements for degrees and radians
@@ -105,13 +112,13 @@ def screen_options():
         if raddeg == 1:
             print("Enter an angle in Radians to find Sine: ")
             x = enter_num()
-            result = calc.sine(x)
-            return result
+            state.result = calc.sine(x)
+            return state.result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Sine: ")
             x = enter_num()
-            result = calc.sine(math.degrees(x))
-            return result
+            state.result = calc.sine(math.degrees(x))
+            return state.result
 
 
     elif Operation == 10:
@@ -120,13 +127,13 @@ def screen_options():
         if raddeg == 1:
             print("Enter an angle in Radians to find Cosine: ")
             x = enter_num()
-            result = calc.cosine(x)
-            return result
+            state.result = calc.cosine(x)
+            return state.result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Cosine: ")
             x = enter_num()
-            result = calc.cosine(math.degrees(x))
-            return result
+            state.result = calc.cosine(math.degrees(x))
+            return state.result
 
     elif Operation == 11:
         print("Tangent")
@@ -134,13 +141,13 @@ def screen_options():
         if raddeg == 1:
             print("Enter an angle in Radians to find Tangent: ")
             x = enter_num()
-            result = calc.tangent(x)
-            return result
+            state.result = calc.tangent(x)
+            return state.result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Tangent: ")
             x = enter_num()
-            result = calc.tangent(math.degrees(x))
-            return result
+            state.result = calc.tangent(math.degrees(x))
+            return state.result
 
     elif Operation == 12:
         print("Inverse Sine")
@@ -148,8 +155,8 @@ def screen_options():
         if raddeg == 1:
             print("Enter an angle in Radians to find Inverse Sine: ")
             x = enter_num()
-            result = calc.inverse_sine(x)
-            return result
+            state.result = calc.inverse_sine(x)
+            return state.result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Inverse Sine: ")
             x = enter_num()
@@ -162,13 +169,13 @@ def screen_options():
         if raddeg == 1:
             print("Enter an angle in Radians to find Inverse Cosine: ")
             x = enter_num()
-            result = calc.inverse_cosine(x)
-            return result
+            state.result = calc.inverse_cosine(x)
+            return state.result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Inverse Cosine: ")
             x = enter_num()
-            result = calc.inverse_cosine(math.degrees(x))
-            return result
+            state.result = calc.inverse_cosine(math.degrees(x))
+            return state.result
 
     elif Operation == 14:
         print("Inverse Tangent")
@@ -181,8 +188,8 @@ def screen_options():
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Inverse Tangent: ")
             x = enter_num()
-            result = calc.inverse_tangent(math.degrees(x))
-            return result
+            state.result = calc.inverse_tangent(math.degrees(x))
+            return state.result
 
 ##MEMORY FUNCTIONS
 
@@ -245,51 +252,51 @@ def secondary_operation():
         print("Add")
         print("Enter number to add: ")
         x = enter_num()
-        result = calc.add2(x)
-        return result
+        state.result = calc.add2(x)
+        return state.result
 
     elif Operation == 2:
         print("Subtract")
         print("Enter the number to subtract: ")
         x = enter_num()
-        result = calc.subtract2(x)
-        return result
+        state.result = calc.subtract2(x)
+        return state.result
 
     elif Operation == 3:
         print("Multiply")
         print("Enter the second number: ")
         x = enter_num()
-        result = calc.multiply2(x)
-        return result
+        state.result = calc.multiply2(x)
+        return state.result
 
     elif Operation == 4:
         print("Divide")
         print("Enter the second number: ")
         x = enter_num()
-        result = calc.divide2(x)
-        return result
+        state.result = calc.divide2(x)
+        return state.result
 
     elif Operation == 5:
         print("Square")
-        result = calc.square2(returned_result)
-        return result
+        state.result = calc.square2(returned_result)
+        return state.result
 
     elif Operation == 6:
         print("Exponent")
         print("Enter the exponent: ")
         x = enter_num()
-        result = calc.exp2(x)
-        return result
+        state.result = calc.exp2(x)
+        return state.result
 
     elif Operation == 7:
         print("Square Root")
-        result = calc.square_root2(returned_result)
-        return result
+        state.result = calc.square_root2(returned_result)
+        return state.result
 
     elif Operation == 8:
         print("Inverse")
-        result = calc.inv2(returned_result)
-        return result
+        state.result = calc.inv2(returned_result)
+        return state.result
 
     elif Operation == 9:
         memStore = returned_result
@@ -351,7 +358,9 @@ while condi:
                 break
 
 
+
 if __name__ == '__main__':
+
     main()
     welcome()
 
