@@ -1,4 +1,4 @@
-
+import math
 
 class Calculator:
 
@@ -6,7 +6,7 @@ class Calculator:
         error = False
         value = 0
 
-    def error(self):
+    def err(self):
         self.error = True
 
 
@@ -30,7 +30,7 @@ class Calculator:
             result = x / y
         except:
             result = "Err"
-            self.error()
+            self.err()
 
         return result
 
@@ -46,12 +46,21 @@ class Calculator:
 
 
     def square_root(self, x):
-        print(self, x ** (1 / 2))
-        return x ** (1 / 2)
+        try:
+            print(math.sqrt(x))
+        except:
+            self.err()
+            return "Err"
+        return math.sqrt(x)
 
 
     def inv(self, x):
-        print(self, 1 / x)
+        try:
+            result = 1/x
+        except:
+            self.err()
+            return "Err"
+        print(1 / x)
         return 1 / x
 
 

@@ -47,7 +47,9 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(c.exp(0, 0), 1)
     def test_square_root(self):
         c = Calculator()
-        self.assertEqual(c.add(5, 8), 13)
+        self.assertEqual(c.square_root(-2), "Err")
+        self.assertEqual(c.square_root(9), 3)
+        self.assertEqual(c.square_root(0),0)
 
     def test_add2(self):
         c = Calculator()
@@ -67,7 +69,9 @@ class TestStringMethods(unittest.TestCase):
 
     def test_inv(self):
         c = Calculator()
-        self.assertEqual(c.add(5, 8), 13)
+        self.assertEqual(c.inv(5), .2)
+        self.assertEqual(c.inv(0), "Err")
+        self.assertEqual(c.inv(-5), -.2)
 
     def test_sine(self):
         pass
