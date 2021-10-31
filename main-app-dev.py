@@ -89,7 +89,7 @@ def performCalcLoop(calc):
                 displayResult(temp_display)
 
             elif choice == '8':
-                a = getOneNumbers()
+                a = getOneNumber()
                 temp_display = calc.inverse(a)
                 displayResult(temp_display)
 
