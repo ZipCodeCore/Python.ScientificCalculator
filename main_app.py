@@ -179,11 +179,11 @@ def screen_options():
 
     elif Operation == 14:
         print("Inverse Tangent")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        raddeg = state.degrees
         if raddeg == 1:
             print("Enter an angle in Radians to find Inverse Tangent: ")
             x = enter_num()
-            result = calc.inverse_tangent(x)
+            result = calc.inverse_tangent(state.result)
             return result
         elif raddeg == 2:
             print("Enter an angle in Degrees to find Inverse Tangent: ")
@@ -195,24 +195,24 @@ def screen_options():
 
     elif Operation == 15:
         print("M+")
-        memStore = float(input("Enter a number to store: "))
-        print(memStore)
-        return memStore
+        state.stored_number = float(input("Enter a number to store: "))
+        print(state.stored_number)
+        return state.stored_number
 
     elif Operation == 16:
         print("MC")
-        if type(memStore) != None:
-            print(memStore)
+        if type(state.stored_number) != None:
+            print(state.stored_number)
 
     elif Operation == 17:
         print("MCR")
         store_choice = (input("Do you want to clear memory? Y or N: ")).capitalize()
         if store_choice == "Y":
-            memStore = 0
+            state.stored_number= 0
         else:
             pass
-        print(memStore)
-        return memStore
+        print(state.stored_number)
+        return state.stored_number
 
     elif Operation == 18:
         condi = False
