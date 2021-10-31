@@ -205,7 +205,7 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result + x)
+        print(returned_result + x)
         return returned_result + x
 
 
@@ -215,7 +215,7 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result - x)
+        print(returned_result - x)
         return returned_result - x
 
 

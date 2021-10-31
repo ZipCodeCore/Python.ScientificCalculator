@@ -1,8 +1,8 @@
 from calculator import Calculator
 import math
-import decimal
 
 calc=Calculator()
+
 
 def enter_num():
     try:
@@ -11,6 +11,7 @@ def enter_num():
     except:
         calc.err()
 
+##Calculator Options
 
 def screen_options():
     print("1: Add           8: Inverse              15: M+")
@@ -21,8 +22,7 @@ def screen_options():
     print("6: Square Root   13: Inverse Consine")
     print("7: Exponent      14: Inverse Tangent")
     print("")
-
-    Operation = int(input('Choose an operation: (Select the number) '))
+    Operation = int(input("Choose an operation: (Select the number) "))
 
     memStore = None
 
@@ -32,23 +32,23 @@ def screen_options():
         x = enter_num()
         print("Enter the second number: ")
         y = enter_num()
-        result = calc.add(x, y)
+        result = calc.add(x ,y)
         return result
 
     elif Operation == 2:
         print("Subtract")
-        print('Enter the first number: ')
+        print("Enter the first number: ")
         x = enter_num()
-        print('Enter the second number: ')
+        print("Enter the second number: ")
         y = enter_num()
         result = calc.subtract(x, y)
         return result
 
     elif Operation == 3:
-        print('Multiply')
-        print('Enter the first number: ')
+        print("Multiply")
+        print("Enter the first number: ")
         x = enter_num()
-        print('Enter the second number: ')
+        print("Enter the second number: ")
         y = enter_num()
         result = calc.multiply(x, y)
         return result
@@ -97,56 +97,98 @@ def screen_options():
         return result
 
 ##TRIG FUNCTIONS
-##must add statements for degrees/radians
+    ##updated with statements for degrees and radians
 
     elif Operation == 9:
         print("Sine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.sine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Sine: ")
+            x = enter_num()
+            result = calc.sine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Sine: ")
+            x = enter_num()
+            result = calc.sine(math.degrees(x))
+            return result
+
 
     elif Operation == 10:
         print("Cosine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.cosine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Cosine: ")
+            x = enter_num()
+            result = calc.cosine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Cosine: ")
+            x = enter_num()
+            result = calc.cosine(math.degrees(x))
+            return result
 
     elif Operation == 11:
         print("Tangent")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.tangent(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Tangent: ")
+            x = enter_num()
+            result = calc.tangent(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Tangent: ")
+            x = enter_num()
+            result = calc.tangent(math.degrees(x))
+            return result
 
     elif Operation == 12:
         print("Inverse Sine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invsine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Sine: ")
+            x = enter_num()
+            result = calc.inverse_sine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Sine: ")
+            x = enter_num()
+            result = calc.inverse_sine(math.degrees(x))
+            return result
 
     elif Operation == 13:
         print("Inverse Cosine")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invcosine(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Cosine: ")
+            x = enter_num()
+            result = calc.inverse_cosine(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Cosine: ")
+            x = enter_num()
+            result = calc.inverse_cosine(math.degrees(x))
+            return result
 
     elif Operation == 14:
         print("Inverse Tangent")
-        print("Enter the number: ")
-        x = enter_num()
-        result = calc.invtangent(x)
-        return result
+        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
+        if raddeg == 1:
+            print("Enter an angle in Radians to find Inverse Tangent: ")
+            x = enter_num()
+            result = calc.inverse_tangent(x)
+            return result
+        elif raddeg == 2:
+            print("Enter an angle in Degrees to find Inverse Tangent: ")
+            x = enter_num()
+            result = calc.inverse_tangent(math.degrees(x))
+            return result
 
 ##MEMORY FUNCTIONS
 
     elif Operation == 15:
         print("M+")
-        print("Enter the number: ")
-        memStore = float(input("Enter a value to store: "))
+        memStore = float(input("Enter a number to store: "))
         print(memStore)
         return memStore
 
@@ -157,7 +199,7 @@ def screen_options():
 
     elif Operation == 17:
         print("MCR")
-        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
+        store_choice = (input("Do you want to clear memory? Y or N: ")).capitalize()
         if store_choice == "Y":
             memStore = 0
         else:
@@ -174,17 +216,17 @@ def screen_options():
 
 
 def choose_data_type():
-    data_choice = int(input('Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal '))
-    if data_choice == 1:
+    type_choice = int(input("Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal "))
+    if type_choice == 1:
         print(returned_result)
         return returned_result
-    elif data_choice == 2:
+    elif type_choice == 2:
         print(hex(int(returned_result)))
         return hex(int(returned_result))
-    elif data_choice == 3:
+    elif type_choice == 3:
         print(bin(int(returned_result)).replace("0b", ""))
         return bin(int(returned_result)).replace("0b", "")
-    elif data_choice == 4:
+    elif type_choice == 4:
         print(oct(int(returned_result)))
         return oct(int(returned_result))
 
@@ -229,7 +271,7 @@ def secondary_operation():
 
     elif Operation == 5:
         print("Square")
-        result = square2(returned_result)
+        result = calc.square2(returned_result)
         return result
 
     elif Operation == 6:
@@ -246,7 +288,7 @@ def secondary_operation():
 
     elif Operation == 8:
         print("Inverse")
-        result = inv2(returned_result)
+        result = calc.inv2(returned_result)
         return result
 
     elif Operation == 9:
@@ -261,7 +303,7 @@ def secondary_operation():
             print('Empty')
 
     elif Operation == 11:
-        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
+        store_choice = (input("Do you want to clear memory? Y or N: ")).capitalize()
         if store_choice == "Y":
             memStore = 0
         else:
@@ -278,34 +320,35 @@ def secondary_operation():
 ## on screen ##
 
 
-def welcome():
-    print("Welcome to our Calculator!")
-    print("How can we help you?")
+#loop does not operate correctly while welcome and main are defined as functions, must keep open
+
+print("Welcome to our Calculator!")
+print("How can we help you?")
+print("")
+
+
+
+condi = True
+while condi:
+    returned_result = screen_options()
+    print(f"Result: {returned_result}")
+    choose_data_type()
     print("")
-
-
-def main():
-    condi = True
-    while condi:
-        returned_result = screen_options()
-        print(f"Result: {returned_result}")
-        choose_data_type()
-        print("")
-        cont = capitalize(input("Do you want to clear memory? Y or N: "))
-        print('')
-        if cont == "Y":
-            condi2 = True
-            while condi2:
-                returned_result = secondary_operation()
-                print(f"Result: {returned_result}")
-                choose_data_type()
-                print("")
-                cont2 = capitalize(input("Do you want to clear memory? Y or N: "))
-                print("")
-                if cont2 == "Y":
-                    condi2 = True
-                else:
-                    break
+    cont = (input("Do you want to clear memory? Y or N: ")).capitalize()
+    print("")
+    if cont == "Y":
+        condi2 = True
+        while condi2:
+            returned_result = secondary_operation()
+            print(f"Result: {returned_result}")
+            choose_data_type()
+            print("")
+            cont2 = (input("Do you want to clear memory? Y or N: ")).capitalize()
+            print("")
+            if cont2 == "Y":
+                condi2 = True
+            else:
+                break
 
 
 if __name__ == '__main__':
