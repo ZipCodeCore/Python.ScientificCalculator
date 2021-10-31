@@ -104,3 +104,27 @@ class Calculator:
 
     def trig_units_mode_rad_to_deg(self, x):
         return math.degrees(x)
+
+    def factorial(self,x ):
+        return math.factorial(self.state)
+
+    def log(self, x, base):
+        return math.log(x,base)
+
+    def inverse_log(self,x):
+        return 10**x
+
+    def ln(self, x):
+        return math.ln(x)
+
+    def inv_ln(self,x):
+        return math.exp(x)
+
+    #def logTen(self, self.state):
+        #return math.log10(self.state)
+
+    def pi(self):
+        return math.pi
+
+    def e(self):
+        return math.e

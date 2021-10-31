@@ -207,12 +207,46 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
         elif choice == '20':  # added by KB
             x = getOneNumber()
             temp_display = calc.trig_units_mode_deg_to_rad(x)
-            print(displayResult(temp_display)," radians"
+            print(displayResult(temp_display)," radians")
 
         elif choice == '21':  # added by KB
             x = getOneNumber()
             temp_display = calc.trig_units_mode_rad_to_deg(x)
-            print(displayResult(temp_display), " degrees"
+            print(displayResult(temp_display), " degrees")
+
+        elif choice == '22':# added by KB
+            x = getOneNumber()
+            temp_display = calc.factorial(x)
+            print(displayResult(temp_display))
+
+        elif choice =='23':# added by KB
+            print("Enter your number and base as prompted below\n")
+            x,b = getTwoNumbers()
+            temp_display = calc.log(x,b)
+            print(displayResult(temp_display))
+
+        elif choice == '24':# added by KB
+            x = getOneNumber()
+            temp_display = calc.inverse_log(x)
+            print(displayResult(temp_display))
+
+        elif choice == '25':# added by KB
+            x = getOneNumber()
+            temp_display = calc.ln(x)
+            print(displayResult(temp_display))
+
+        elif choice == '26':# added by KB
+            x = getOneNumber()
+            temp_display = calc.inv_ln(x)
+            print(displayResult(temp_display))
+
+        elif choice == '27':# added by KB
+            temp_display = calc.pi()
+            print(displayResult(temp_display))
+
+        elif choice == '28':# added by KB
+            temp_display = calc.e()
+            print(displayResult(temp_display))
 
 # main start
 def main():
