@@ -36,17 +36,22 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
     print('\nBOO! Happy Halloween ;) \n\n "Welcome to your Scientific Calculator."')
     print("\nHere's a list of choices:")
     print('~' * 70)
-    print("1 : Addition  \t\t               12 : MC")
-    print("2 : Subtraction \t               13 : MRC")
-    print("3 : Multiplication\t               14 : Sine ")
-    print("4 : Division  \t\t               15 : Cosine ")
-    print("5 : Square     \t                   16 : Tangent ")
-    print("6 : Square Root\t                   17 : Inverse Sine")
-    print("7 : Variable Exponentiation \t   18 : Inverse Cosine")
-    print("8 : Inverse of Display  \t       19 : Inverse Tangent")
-    print("9 : Invert Sign (+/-)\t           20 : Quit")
-    print("10 : Switch Display\t                           21 : ")
-    print("11 : M+ \t\t                       22 : ")
+    print("1 : Addition  \t\t               17 : Inverse sine")
+    print("2 : Subtraction \t               18 : Inverse cosine")
+    print("3 : Multiplication\t               19 : Inverse tangent")
+    print("4 : Division  \t\t               20 : Trig units mode - Convert Radians to Degrees")
+    print("5 : Square     \t                   21 : Trig units mode - Convert Degrees to Radians")
+    print("6 : Square Root\t                   22 : Factorial")
+    print("7 : Variable Exponentiation \t   23 : Log x")
+    print("8 : Inverse of Display  \t       24 : 10 power x - Inverse nog")
+    print("9 : Invert Sign (+/-)\t           25 : Ln x - Natural log")
+    print("10 : Switch Display\t                     26 : e power x - Inverse natural log")
+    print("11 : M+ \t\t                       27 : Pi")
+    print("12 : MC \t\t                       28 : Exponentiation constant")
+    print("13 : MRC \t\t                       29: Quit")
+    print("14 : Sine")
+    print("15 : Cosine")
+    print("16 : Tangent")
     print('~' * 70)
 
 
@@ -199,6 +204,15 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
             else:
                 print("That is not a valid input.")
 
+        elif choice == '20':  # added by KB
+            x = getOneNumber()
+            temp_display = calc.trig_units_mode_deg_to_rad(x)
+            print(displayResult(temp_display)," radians"
+
+        elif choice == '21':  # added by KB
+            x = getOneNumber()
+            temp_display = calc.trig_units_mode_rad_to_deg(x)
+            print(displayResult(temp_display), " degrees"
 
 # main start
 def main():

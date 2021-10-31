@@ -98,3 +98,9 @@ class Calculator:
 
     def inv_tan_rad(self, x):
         return math.tan(x)
+
+    def trig_units_mode_deg_to_rad(self, x):
+        return math.radians(x)
+
+    def trig_units_mode_rad_to_deg(self, x):
+        return math.degrees(x)
