@@ -22,7 +22,7 @@ def screen_options():
     print("6: Square Root   13: Inverse Consine")
     print("7: Exponent      14: Inverse Tangent")
     print("")
-    Operation = int(input('Choose an operation: (Select the number) '))
+    Operation = int(input("Choose an operation: (Select the number) "))
 
     memStore = None
 
@@ -199,7 +199,7 @@ def screen_options():
 
     elif Operation == 17:
         print("MCR")
-        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
+        store_choice = (input("Do you want to clear memory? Y or N: ")).capitalize()
         if store_choice == "Y":
             memStore = 0
         else:
@@ -216,17 +216,17 @@ def screen_options():
 
 
 def choose_data_type():
-    data_choice = int(input("Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal "))
-    if data_choice == 1:
+    type_choice = int(input("Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal "))
+    if type_choice == 1:
         print(returned_result)
         return returned_result
-    elif data_choice == 2:
+    elif type_choice == 2:
         print(hex(int(returned_result)))
         return hex(int(returned_result))
-    elif data_choice == 3:
+    elif type_choice == 3:
         print(bin(int(returned_result)).replace("0b", ""))
         return bin(int(returned_result)).replace("0b", "")
-    elif data_choice == 4:
+    elif type_choice == 4:
         print(oct(int(returned_result)))
         return oct(int(returned_result))
 
@@ -303,7 +303,7 @@ def secondary_operation():
             print('Empty')
 
     elif Operation == 11:
-        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
+        store_choice = (input("Do you want to clear memory? Y or N: ")).capitalize()
         if store_choice == "Y":
             memStore = 0
         else:
@@ -320,34 +320,35 @@ def secondary_operation():
 ## on screen ##
 
 
-def welcome():
-    print("Welcome to our Calculator!")
-    print("How can we help you?")
+#loop does not operate correctly while welcome and main are defined as functions, must keep open
+
+print("Welcome to our Calculator!")
+print("How can we help you?")
+print("")
+
+
+
+condi = True
+while condi:
+    returned_result = screen_options()
+    print(f"Result: {returned_result}")
+    choose_data_type()
     print("")
-
-
-def main():
-    condi = True
-    while condi:
-        returned_result = screen_options()
-        print(f"Result: {returned_result}")
-        choose_data_type()
-        print("")
-        cont = capitalize(input("Do you want to clear memory? Y or N: "))
-        print("")
-        if cont == "Y":
-            condi2 = True
-            while condi2:
-                returned_result = secondary_operation()
-                print(f"Result: {returned_result}")
-                choose_data_type()
-                print("")
-                cont2 = capitalize(input("Do you want to clear memory? Y or N: "))
-                print("")
-                if cont2 == "Y":
-                    condi2 = True
-                else:
-                    break
+    cont = (input("Do you want to clear memory? Y or N: ")).capitalize()
+    print("")
+    if cont == "Y":
+        condi2 = True
+        while condi2:
+            returned_result = secondary_operation()
+            print(f"Result: {returned_result}")
+            choose_data_type()
+            print("")
+            cont2 = (input("Do you want to clear memory? Y or N: ")).capitalize()
+            print("")
+            if cont2 == "Y":
+                condi2 = True
+            else:
+                break
 
 
 if __name__ == '__main__':
