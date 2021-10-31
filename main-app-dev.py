@@ -12,58 +12,94 @@ def getOneNumber():     # get one number instead
     return a
 
 
-def displayResult(x: float):
-    print(x, "\n")
+def displayResult(temp_display: float):
+    print("DISPLAY:\n")
+    print(temp_display)
 
 
 def performCalcLoop(calc):
-    while True:
-        choice = input("Operation? ")
-        if choice == 'q':
-            print("Thanks for stopping by, have a great day.")
-            break  # user types q to quit calulator.
 
-        elif choice == 'add':
-            a, b = getTwoNumbers()
-            displayResult(calc.add(a, b))
 
-        elif choice == 'subtract':
-            a, b = getTwoNumbers()
-            displayResult(calc.sub(a, b))
+        print('\nBOO! Happy Halloween ;) \n\n "Welcome to your Scientific Calculator."')
+        print("\nHere's a list of choices:")
+        print('~' * 70)
+        print("1 : Addition  \t\t               12 : ")
+        print("2 : Subtraction \t               13 : ")
+        print("3 : Multiplication\t               14 : ")
+        print("4 : Division  \t\t               15 : ")
+        print("5 : Square     \t                   16 : ")
+        print("6 : Square Root\t                   17 : ")
+        print("7 : Variable Exponentiation \t   18 : ")
+        print("8 : Inverse of Display  \t       19 : ")
+        print("9 : Invert Sign (+/-)\t           20 : Quit")
+        print("10 : \t                           21 : ")
+        print("11 :  \t\t                       22 : ")
+        print('~' * 70)
+        temp_display = 0
+        print("DISPLAY:")
+        print(temp_display)
 
-        elif choice == 'multiply':
-            a, b = getTwoNumbers()
-            displayResult(calc.mult(a, b))
+        while True:
+            try:
 
-        elif choice == 'divide':
-            a, b = getTwoNumbers()
-            if b == 0:
-                print("Err")
+                choice = input("\nEnter number to choose your operation: \n")
+            except:
+                print("Please enter a valid number.")
+
+            if choice == '20':
+                print("Thanks for stopping by, have a great day.")
+                break  # user types q to quit calulator.
+
+            elif choice == '1':
+                a, b = getTwoNumbers()
+                temp_display = calc.add(a, b)
+                displayResult(temp_display)
+
+            elif choice == '2':
+                a, b = getTwoNumbers()
+                temp_display = calc.sub(a, b)
+                displayResult(temp_display)
+
+            elif choice == '3':
+                a, b = getTwoNumbers()
+                temp_display = calc.mult(a, b)
+                displayResult(temp_display)
+
+            elif choice == '4':
+                a, b = getTwoNumbers()
+                if b == 0:
+                    print("Err")
+                else:
+                    temp_display = calc.div(a, b)
+                    displayResult(temp_display)
+
+            elif choice == '5':
+                a = getOneNumber()
+                temp_display = calc.sq(a)
+                displayResult(temp_display)
+
+            elif choice == '6':
+                a = getOneNumber()
+                temp_display = calc.sqrt(a)
+                displayResult(temp_display)
+
+            elif choice == '7':
+                a, b = getTwoNumbers()
+                temp_display = calc.varexp(a, b)
+                displayResult(temp_display)
+
+            elif choice == '8':
+                a = getOneNumbers()
+                temp_display = calc.inverse(a)
+                displayResult(temp_display)
+
+            elif choice == '9':
+                a = getOneNumber()
+                temp_display = calc.invert_sign(a)
+                displayResult(temp_display)
+
             else:
-                displayResult(calc.div(a, b))
-
-        elif choice == 'square':
-            a = getOneNumber()
-            displayResult(calc.sq(a))
-
-        elif choice == 'square root':
-            a = getOneNumber()
-            displayResult(calc.sqrt(a))
-
-        elif choice == 'variable exponentiation':
-            a, b = getTwoNumbers()
-            displayResult(calc.varexp(a, b))
-
-        elif choice == 'inverse':
-            a = getOneNumbers()
-            displayResult(calc.inverse(a))
-
-        elif choice == 'invert sign':
-            a = getOneNumber()
-            displayResult(calc.invert_sign(a))
-
-        else:
-            print("That is not a valid input.")
+                print("That is not a valid input.")
 
 
 # main start

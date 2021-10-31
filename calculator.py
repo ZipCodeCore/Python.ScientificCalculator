@@ -13,18 +13,21 @@ class Calculator:
         return x * y
 
     def div(self, x, y):
+        if y == 0:
+            print(Err)
+
         return x / y
 
     def sq(self, x):
         return x**2
 
     def sqrt(self, x):
-        return x*x
+        return x**(1/2)
 
     def varexp(self, x, y):
         return x**y
 
-    def inverve(self, x):
+    def inverse(self, x):
         return 1 / x
 
     def invert_sign(self, x):
