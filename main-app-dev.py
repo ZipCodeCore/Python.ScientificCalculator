@@ -68,7 +68,7 @@ def performCalcLoop(calc):
             elif choice == '4':
                 a, b = getTwoNumbers()
                 if b == 0:
-                    print("Err")
+                    print("\nDISPLAY:\nErr")
                 else:
                     temp_display = calc.div(a, b)
                     displayResult(temp_display)
