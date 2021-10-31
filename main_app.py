@@ -1,6 +1,5 @@
 from calculator import Calculator
 import math
-import decimal
 
 calc=Calculator()
 
@@ -23,7 +22,6 @@ def screen_options():
     print("6: Square Root   13: Inverse Consine")
     print("7: Exponent      14: Inverse Tangent")
     print("")
-
     Operation = int(input('Choose an operation: (Select the number) '))
 
     memStore = None
@@ -39,18 +37,18 @@ def screen_options():
 
     elif Operation == 2:
         print("Subtract")
-        print('Enter the first number: ')
+        print("Enter the first number: ")
         x = enter_num()
-        print('Enter the second number: ')
+        print("Enter the second number: ")
         y = enter_num()
         result = calc.subtract(x, y)
         return result
 
     elif Operation == 3:
-        print('Multiply')
-        print('Enter the first number: ')
+        print("Multiply")
+        print("Enter the first number: ")
         x = enter_num()
-        print('Enter the second number: ')
+        print("Enter the second number: ")
         y = enter_num()
         result = calc.multiply(x, y)
         return result
@@ -190,8 +188,7 @@ def screen_options():
 
     elif Operation == 15:
         print("M+")
-        print("Enter the number: ")
-        memStore = float(input("Enter a value to store: "))
+        memStore = float(input("Enter a number to store: "))
         print(memStore)
         return memStore
 
@@ -219,7 +216,7 @@ def screen_options():
 
 
 def choose_data_type():
-    data_choice = int(input('Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal '))
+    data_choice = int(input("Enter data type: 1. Decimal 2. Hexadecimal 3. Binary 4. Octal "))
     if data_choice == 1:
         print(returned_result)
         return returned_result
@@ -274,7 +271,7 @@ def secondary_operation():
 
     elif Operation == 5:
         print("Square")
-        result = square2(returned_result)
+        result = calc.square2(returned_result)
         return result
 
     elif Operation == 6:
@@ -291,7 +288,7 @@ def secondary_operation():
 
     elif Operation == 8:
         print("Inverse")
-        result = inv2(returned_result)
+        result = calc.inv2(returned_result)
         return result
 
     elif Operation == 9:
@@ -337,7 +334,7 @@ def main():
         choose_data_type()
         print("")
         cont = capitalize(input("Do you want to clear memory? Y or N: "))
-        print('')
+        print("")
         if cont == "Y":
             condi2 = True
             while condi2:
