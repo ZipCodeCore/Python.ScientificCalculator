@@ -11,7 +11,6 @@ class Calculator:
     def err(self):
         self.error = True
 
-        self.degrees = True
 
 
 
