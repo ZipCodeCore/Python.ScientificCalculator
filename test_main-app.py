@@ -2,7 +2,7 @@ import unittest
 from calculator import Calculator
 
 
-class TestStringMethods(unittest.TestCase):
+class TestCalculatorMethods(unittest.TestCase):
 
     def test_add(self):
         c = Calculator()

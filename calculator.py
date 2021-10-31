@@ -1,9 +1,13 @@
-import math
+
 
 class Calculator:
 
     def __init__(self):
-        pass
+        error = False
+        value = 0
+
+    def error(self):
+        self.error = True
 
 
     def add(self, a, b):
@@ -22,8 +26,13 @@ class Calculator:
 
 
     def divide(self, x, y):
-        print(self, x / y)
-        return x / y
+        try:
+            result = x / y
+        except:
+            result = "Err"
+            self.error()
+
+        return result
 
 
     def square(self, base):

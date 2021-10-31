@@ -5,8 +5,12 @@ import decimal
 calc=Calculator()
 
 def enter_num():
-    num1 = float(input())
-    return num1
+    try:
+        num1 = float(input())
+        return num1
+    except:
+        calc.error()
+
 
 
 def screen_options():
@@ -281,25 +285,26 @@ print("Welcome to our Calculator!")
 print("How can we help you?")
 print("")
 
-
-condi = True
-while condi:
-    returned_result = screen_options()
-    print(f"Result: {returned_result}")
-    choose_data_type()
-    print("")
-    cont = input("Continue with current value? Y or N (case sensitive): ")
-    print('')
-    if cont == "Y":
-        condi2 = True
-        while condi2:
-            returned_result = secondary_operation()
-            print(f"Result: {returned_result}")
-            choose_data_type()
-            print("")
-            cont2 = input("Continue with current value? Y or N (case sensitive): ")
-            print("")
-            if cont2 == "Y":
-                condi2 = True
-            else:
-                break
+def main():
+    condi = True
+    while condi:
+        returned_result = screen_options()
+        print(f"Result: {returned_result}")
+        choose_data_type()
+        print("")
+        cont = input("Continue with current value? Y or N (case sensitive): ")
+        print('')
+        if cont == "Y":
+            condi2 = True
+            while condi2:
+                returned_result = secondary_operation()
+                print(f"Result: {returned_result}")
+                choose_data_type()
+                print("")
+                cont2 = input("Continue with current value? Y or N (case sensitive): ")
+                print("")
+                if cont2 == "Y":
+                    condi2 = True
+                else:
+                    break
+main()
