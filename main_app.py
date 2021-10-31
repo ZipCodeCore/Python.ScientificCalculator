@@ -9,8 +9,7 @@ def enter_num():
         num1 = float(input())
         return num1
     except:
-        calc.error()
-
+        calc.err()
 
 
 def screen_options():
@@ -107,7 +106,6 @@ def screen_options():
         result = calc.sine(x)
         return result
 
-
     elif Operation == 10:
         print("Cosine")
         print("Enter the number: ")
@@ -115,14 +113,12 @@ def screen_options():
         result = calc.cosine(x)
         return result
 
-
     elif Operation == 11:
         print("Tangent")
         print("Enter the number: ")
         x = enter_num()
         result = calc.tangent(x)
         return result
-
 
     elif Operation == 12:
         print("Inverse Sine")
@@ -154,7 +150,6 @@ def screen_options():
         print(memStore)
         return memStore
 
-
     elif Operation == 16:
         print("MC")
         if type(memStore) != None:
@@ -162,7 +157,7 @@ def screen_options():
 
     elif Operation == 17:
         print("MCR")
-        store_choice = input("Do you want to clear memory? Y or N (case sensitive): ")
+        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
         if store_choice == "Y":
             memStore = 0
         else:
@@ -266,7 +261,7 @@ def secondary_operation():
             print('Empty')
 
     elif Operation == 11:
-        store_choice = input("Do you want to clear memory? Y or N (case sensitive): ")
+        store_choice = capitalize(input("Do you want to clear memory? Y or N: "))
         if store_choice == "Y":
             memStore = 0
         else:
@@ -277,13 +272,17 @@ def secondary_operation():
     elif Operation == 12:
         condi = False
         print('Goodbye!')
+
+
 ######################################################################
 ## on screen ##
 
 
-print("Welcome to our Calculator!")
-print("How can we help you?")
-print("")
+def welcome():
+    print("Welcome to our Calculator!")
+    print("How can we help you?")
+    print("")
+
 
 def main():
     condi = True
@@ -292,7 +291,7 @@ def main():
         print(f"Result: {returned_result}")
         choose_data_type()
         print("")
-        cont = input("Continue with current value? Y or N (case sensitive): ")
+        cont = capitalize(input("Do you want to clear memory? Y or N: "))
         print('')
         if cont == "Y":
             condi2 = True
@@ -301,10 +300,15 @@ def main():
                 print(f"Result: {returned_result}")
                 choose_data_type()
                 print("")
-                cont2 = input("Continue with current value? Y or N (case sensitive): ")
+                cont2 = capitalize(input("Do you want to clear memory? Y or N: "))
                 print("")
                 if cont2 == "Y":
                     condi2 = True
                 else:
                     break
-main()
+
+
+if __name__ == '__main__':
+    main()
+    welcome()
+
