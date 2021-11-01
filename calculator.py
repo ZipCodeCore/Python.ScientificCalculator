@@ -23,6 +23,7 @@ class Calculator:
             result = eval(x)
             return result
         except:
+            self.err()
             return "Err"
 
 
@@ -260,8 +261,7 @@ class Calculator:
     def clr(self,ce):
         test = ce.upper()
         if test == "CE":
-            print("ce")
             self.error = False
-            result = 0
+            self.result = 0
 
 

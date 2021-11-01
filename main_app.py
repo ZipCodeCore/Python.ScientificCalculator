@@ -22,15 +22,20 @@ def enter_num():
 ##Calculator Options
 
 def screen_options():
+    if calc.degrees:
+        raddeg = "Degrees"
+    else:
+        raddeg = "Radians"
+
     print("1: Add           8: Inverse              15: M+")
     print("2: Subtract      9: Sine                 16: MC")
     print("3: Multiply      10: Cosine              17: MRC")
-    print("4: Divide        11: Tangent             18: Swap")
+    print("4: Divide        11: Tangent             18: Swap Trig")
     print("5: Square        12: Inverse Sine        19: Pi")
     print("6: Square Root   13: Inverse Consine     20: Evaluate")
     print("7: Exponent      14: Inverse Tangent     21: Exit")
     print("")
-    print(f"Current number is: {calc.result}")
+    print(f"Current number is: {calc.result} and trig functions are in {raddeg}")
     Operation = int(input("Choose an operation: (Select the number) "))
 
     memStore = None
@@ -77,32 +82,31 @@ def screen_options():
 
     elif Operation == 5:
         print("Square")
-        print("Enter the number: ")
-        base = enter_num()
-        calc.result = square(base)
-        return calc.result
-
-    elif Operation == 6:
-        print("Exponent")
-        print("Enter the base number: ")
-        x = enter_num()
-        print("Enter the exponent")
-        y = enter_num()
-        calc.result = calc.exp(x, y)
+        # print("Enter the number: ")
+        calc.result = calc.square(calc.result)
         return calc.result
 
     elif Operation == 7:
-        print("Square Root")
-        print("Enter the number: ")
+        print("Exponent")
+        print(f"Raise {calc.result} to the (enter number) power: ")
         x = enter_num()
-        calc.result = calc.square_root(x)
+        # print("Enter the exponent")
+        # y = enter_num()
+        calc.result = calc.exp(calc.result, x)
+        return calc.result
+
+    elif Operation == 6:
+        print("Square Root")
+        # print("Enter the number: ")
+        # x = enter_num()
+        calc.result = calc.square_root(calc.result)
         return calc.result
 
     elif Operation == 8:
         print("Inverse")
-        print("Enter the number: ")
-        x = enter_num()
-        calc.result = calc.invert(x)
+        # print("Enter the number: ")
+        # x = enter_num()
+        calc.result = calc.invert(calc.result)
         return calc.result
 
 ##TRIG FUNCTIONS
@@ -110,65 +114,64 @@ def screen_options():
 
     elif Operation == 9:
         print("Sine")
-        if calc.degrees:
-            print("Enter a number in degrees to find Sine: ")
-        else:
-            print("Enter a number in radians to find Sine: ")
-        x = enter_num()
-        calc.result = calc.sin(x)
+        # if calc.degrees:
+        #     print("Enter a number in degrees to find Sine: ")
+        # else:
+        #     print("Enter a number in radians to find Sine: ")
+        calc.result = calc.sin(calc.result)
         return calc.result
 
 
     elif Operation == 10:
         print("Cosine")
-        if calc.degrees:
-            print("Enter an angle in degrees to find Cosine: ")
-        else:
-            print("Enter an angle in radians to find Cosine: ")
-        x = enter_num()
-        calc.result = calc.cosine(x)
+        # if calc.degrees:
+        #     print("Enter an angle in degrees to find Cosine: ")
+        # else:
+        #     print("Enter an angle in radians to find Cosine: ")
+        # x = enter_num()
+        calc.result = calc.cosine(calc.result)
         return calc.result
 
 
     elif Operation == 11:
         print("Tangent")
-        if calc.degrees:
-            print("Enter an angle in degrees to find Tangent: ")
-        else:
-            print("Enter an angle in radians to find Tangent: ")
-        x = enter_num()
-        calc.result = calc.tangent(x)
+        # if calc.degrees:
+        #     print("Enter an angle in degrees to find Tangent: ")
+        # else:
+        #     print("Enter an angle in radians to find Tangent: ")
+        # x = enter_num()
+        calc.result = calc.tangent(calc.result)
         return calc.result
 
 
     elif Operation == 12:
         print("Inverse Sine")
-        if calc.degrees:
-            print("Enter a number to find the arc sine in degrees: ")
-        else:
-            print("Enter a number to find the arc sine in radians: ")
-        x = enter_num()
-        result = calc.inverse_sine(x)
+        # if calc.degrees:
+        #     print("Enter a number to find the arc sine in degrees: ")
+        # else:
+        #     print("Enter a number to find the arc sine in radians: ")
+        # x = enter_num()
+        result = calc.inverse_sine(calc.result)
         return result
 
     elif Operation == 13:
         print("Inverse Cosine")
-        if calc.degrees:
-            print("Enter an angle in degrees to find Inverse Cosine: ")
-        else:
-            print("Enter an angle in radians to find Inverse Cosine: ")
-        x = enter_num()
-        calc.result = calc.inverse_cosine(x)
+        # if calc.degrees:
+        #     print("Enter an angle in degrees to find Inverse Cosine: ")
+        # else:
+        #     print("Enter an angle in radians to find Inverse Cosine: ")
+        # x = enter_num()
+        calc.result = calc.inverse_cosine(calc.result)
         return calc.result
 
     elif Operation == 14:
         print("Inverse Tangent")
-        if calc.degrees:
-            print("Enter an angle in degrees to find Inverse Tangent: ")
-        else:
-            print("Enter an angle in radians to find Inverse Tangent: ")
-        x = enter_num()
-        calc.result = calc.inverse_tangent(x)
+        # if calc.degrees:
+        #     print("Enter an angle in degrees to find Inverse Tangent: ")
+        # else:
+        #     print("Enter an angle in radians to find Inverse Tangent: ")
+        # x = enter_num()
+        calc.result = calc.inverse_tangent(calc.result)
         return calc.result
 
 ##MEMORY FUNCTIONS
@@ -207,9 +210,11 @@ def screen_options():
 
     elif Operation == 20:
         print("Evaluate")
-        x = str(input("Enter what you would like evaluated: "))
+        x = input("Enter what you would like evaluated: ")
         calc.result = calc.eval_function(x)
         return calc.result
+
+
 
     elif Operation == 21:
         condi = False
