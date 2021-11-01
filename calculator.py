@@ -5,8 +5,11 @@ class Calculator:
 
     def __init__(self):
 
-        error = False
-        value = 0
+        self.error = False
+        self.result = 0
+        self.degrees = True
+        self.display_mode = "decimal"
+        self.stored_number = 0
 
     def err(self):
         self.error = True
@@ -204,8 +207,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print(returned_result + x)
-        return returned_result + x
+        print(self.result + x)
+        return self.result + x
 
 
     def subtract2(self, x):
@@ -214,8 +217,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print(returned_result - x)
-        return returned_result - x
+        print(self.result - x)
+        return self.result - x
 
 
     def multiply2(self, x):
@@ -224,8 +227,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result * x)
-        return returned_result * x
+        print( self.result * x)
+        return self.result * x
 
 
     def divide2(self, x):
@@ -234,6 +237,6 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result / x)
-        return returned_result / x
+        print( self.result / x)
+        return self.result / x
 
