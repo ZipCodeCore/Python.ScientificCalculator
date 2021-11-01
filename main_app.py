@@ -101,7 +101,7 @@ def screen_options():
         print("Inverse")
         print("Enter the number: ")
         x = enter_num()
-        calc.result = calc.inv(x)
+        calc.result = calc.invert(x)
         return calc.result
 
 ##TRIG FUNCTIONS

@@ -15,11 +15,15 @@ class Calculator:
     def err(self):
         self.error = True
 
-    def eval_function(self, x: str) -> float:
+    def eval_function(self, x: str):
         """
         evaluates x to return a result
         """
-        return eval(x)
+        try:
+            result = eval(x)
+            return result
+        except:
+            return "Err"
 
 
 
@@ -103,7 +107,7 @@ class Calculator:
         return math.sqrt(x)
 
 
-    def inv(self, x):
+    def invert(self, x):
         """
         INVERSES A NUMBER AND RETURNS RESULT
         :param x:
@@ -111,10 +115,10 @@ class Calculator:
         """
         try:
             result = 1/x
+            return result
         except:
             self.err()
             return "Err"
-        print(1 / x)
 
 
     def deg_rad_swap(self):
@@ -130,9 +134,12 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.sin(x)
+        try:
+            if self.degrees:
+                x = math.radians(x)
+            return math.sin(x)
+        except:
+            return "Err"
 
     def cosine(self, x):
         """
@@ -140,11 +147,13 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.degrees(math.cos(x))
-        else:
+        try:
+            if self.degrees:
+                x = math.radians(x)
             x = math.cos(x)
-        return x
+            return x
+        except:
+            return "Err"
 
     def tangent(self, x):
         """
@@ -152,11 +161,13 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.degrees(math.tan(x))
-        else:
+        try:
+            if self.degrees:
+                x = math.radians(x)
             x = math.tan(x)
-        return x
+            return x
+        except:
+            return "Err"
 
     def inverse_sine(self, x):
         """
@@ -164,11 +175,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.degrees(math.asin(x))
-        else:
-            x = math.asin(x)
-        return x
+        try:
+            if self.degrees:
+                x = math.degrees(math.asin(x))
+            else:
+                x = math.asin(x)
+            return x
+        except:
+            return "Err"
 
     def inverse_cosine(self, x):
         """
@@ -176,11 +190,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.degrees(math.acos(x))
-        else:
-            x = math.acos(x)
-        return x
+        try:
+            if self.degrees:
+                x = math.degrees(math.acos(x))
+            else:
+                x = math.acos(x)
+            return x
+        except:
+            return "Err"
 
     def inverse_tangent(self, x):
         """
@@ -188,11 +205,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.degrees(math.atan(x))
-        else:
-            x = math.atan(x)
-        return x
+        try:
+            if self.degrees:
+                x = math.degrees(math.atan(x))
+            else:
+                x = math.atan(x)
+            return x
+        except:
+            return "Err"
 
     ##SECONDARY FORMULAS
 
