@@ -70,6 +70,7 @@ class Calculator:
         except:
             result = "Err"
             self.err()
+            return result
 
         return result
 
@@ -242,7 +243,7 @@ class Calculator:
         :param x:
         :return:
         """
-        print( self.result * x)
+        # print( self.result * x)
         return self.result * x
 
 
@@ -255,5 +256,12 @@ class Calculator:
 
         print(self.result / x)
         return self.result / x
+
+    def clr(self,ce):
+        test = ce.upper()
+        if test == "CE":
+            print("ce")
+            self.error = False
+            result = 0
 
 

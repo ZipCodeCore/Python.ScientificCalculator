@@ -30,49 +30,50 @@ def screen_options():
     print("6: Square Root   13: Inverse Consine     20: Evaluate")
     print("7: Exponent      14: Inverse Tangent     21: Exit")
     print("")
+    print(f"Current number is: {calc.result}")
     Operation = int(input("Choose an operation: (Select the number) "))
 
     memStore = None
 
     if Operation == 1:
         print("Add")
-        print("Enter the first number: ")
+        print(f"Enter number to add to {calc.result}: ")
         x = enter_num()
-        print("Enter the second number: ")
-        y = enter_num()
-        calc.result = calc.add(x ,y)
+        # print("Enter the second number: ")
+        # y = enter_num()
+        calc.result = calc.add(calc.result ,x)
         return calc.result
 
     elif Operation == 2:
         print("Subtract")
-        print("Enter the first number: ")
+        print(f"Enter number to subtract from {calc.result}: ")
         x = enter_num()
-        print("Enter the second number: ")
-        y = enter_num()
-        calc.result = calc.subtract(x, y)
+        # print("Enter the second number: ")
+        # y = enter_num()
+        calc.result = calc.subtract(calc.result, x)
         return calc.result
 
     elif Operation == 3:
         print("Multiply")
-        print("Enter the first number: ")
+        print(f"Enter number to multiply by {calc.result}: ")
         x = enter_num()
-        print("Enter the second number: ")
-        y = enter_num()
-        calc.result = calc.multiply(x, y)
+       # print("Enter the second number: ")
+      #  y = enter_num()
+        calc.result = calc.multiply(calc.result, x)
         return calc.result
 
     elif Operation == 4:
         print("Divide")
-        print("Enter the first number: ")
+        print(f"Enter number to divide into {calc.result}: ")
         x = enter_num()
-        print("Enter the second number: ")
-        y = enter_num()
-        if y == 0:
-            print("ERROR")
-            return None
-        else:
-            calc.result = calc.divide(x, y)
-            return calc.result
+        # print("Enter the second number: ")
+        # y = enter_num()
+        # if y == 0:
+        #     print("ERROR")
+        #     return None
+        # else:
+        calc.result = calc.divide(calc.result, x)
+        return calc.result
 
     elif Operation == 5:
         print("Square")
@@ -335,23 +336,26 @@ def main():
     while condi:
         calc.result = screen_options()
         print(f"Result: {calc.result}")
+        while calc.error:
+            ce = input("an error occurered'CE' (Clear Error) to continue")
+            calc.clr(ce)
         choose_data_type()
         print("")
-        cont = (input("Do you continue with this number? Y or N: ")).capitalize()
-        print("")
-        if cont == "Y":
-            condi2 = True
-            while condi2:
-                calc.result = secondary_operation()
-                print(f"Result: {calc.result}")
-                choose_data_type()
-                print("")
-                cont2 = (input("Do you continue with this number? Y or N: ")).capitalize()
-                print("")
-                if cont2 == "Y":
-                    condi2 = True
-                else:
-                    break
+        # cont = (input("Do you continue with this number? Y or N: ")).capitalize()
+        # print("")
+        # if cont == "Y":
+        #     condi2 = True
+        #     while condi2:
+        #         calc.result = secondary_operation()
+        #         print(f"Result: {calc.result}")
+        #         choose_data_type()
+        #         print("")
+        #         cont2 = (input("Do you continue with this number? Y or N: ")).capitalize()
+        #         print("")
+        #         if cont2 == "Y":
+        #             condi2 = True
+        #         else:
+        #             break
 
 
 
