@@ -20,3 +20,18 @@ class Calculator:
             print(Err)
         return x / y
 
+    def sq(self, x):
+        return x ** 2
+
+    def sqrt(self, x):
+        return x ** (1 / 2)
+
+    def varexp(self, x, y):
+        return x ** y
+
+    def inverse(self, x):
+        return 1 / x
+
+    def invert_sign(self, x):
+        return x * -1
+
