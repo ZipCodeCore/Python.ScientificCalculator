@@ -324,34 +324,34 @@ def secondary_operation():
 
 
 #loop does not operate correctly while welcome and main are defined as functions, must keep open
-
-print("Welcome to our Calculator!")
-print("How can we help you?")
-print("")
-
-
-
-condi = True
-while condi:
-    calc.result = screen_options()
-    print(f"Result: {calc.result}")
-    choose_data_type()
+def welcome():
+    print("Welcome to our Calculator!")
+    print("How can we help you?")
     print("")
-    cont = (input("Do you continue with this number? Y or N: ")).capitalize()
-    print("")
-    if cont == "Y":
-        condi2 = True
-        while condi2:
-            calc.result = secondary_operation()
-            print(f"Result: {calc.result}")
-            choose_data_type()
-            print("")
-            cont2 = (input("Do you continue with this number? Y or N: ")).capitalize()
-            print("")
-            if cont2 == "Y":
-                condi2 = True
-            else:
-                break
+
+
+def main():
+    condi = True
+    while condi:
+        calc.result = screen_options()
+        print(f"Result: {calc.result}")
+        choose_data_type()
+        print("")
+        cont = (input("Do you continue with this number? Y or N: ")).capitalize()
+        print("")
+        if cont == "Y":
+            condi2 = True
+            while condi2:
+                calc.result = secondary_operation()
+                print(f"Result: {calc.result}")
+                choose_data_type()
+                print("")
+                cont2 = (input("Do you continue with this number? Y or N: ")).capitalize()
+                print("")
+                if cont2 == "Y":
+                    condi2 = True
+                else:
+                    break
 
 
 
