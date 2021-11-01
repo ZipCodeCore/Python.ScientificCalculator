@@ -120,13 +120,9 @@ def screen_options():
 
     elif Operation == 10:
         print("Cosine")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
-        if raddeg == 1:
+        if calc.degrees:
             print("Enter an angle in Radians to find Cosine: ")
-            x = enter_num()
-            calc.result = calc.cosine(x)
-            return calc.result
-        elif raddeg == 2:
+        else:
             print("Enter an angle in Degrees to find Cosine: ")
             x = enter_num()
             calc.result = calc.cosine(math.degrees(x))
@@ -135,13 +131,9 @@ def screen_options():
 
     elif Operation == 11:
         print("Tangent")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
-        if raddeg == 1:
+        if calc.degrees:
             print("Enter an angle in Radians to find Tangent: ")
-            x = enter_num()
-            calc.result = calc.tangent(x)
-            return calc.result
-        elif raddeg == 2:
+        else:
             print("Enter an angle in Degrees to find Tangent: ")
             x = enter_num()
             calc.result = calc.tangent(math.degrees(x))
@@ -150,13 +142,9 @@ def screen_options():
 
     elif Operation == 12:
         print("Inverse Sine")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
-        if raddeg == 1:
+        if calc.degrees:
             print("Enter an angle in Radians to find Inverse Sine: ")
-            x = enter_num()
-            calc.result = calc.inverse_sine(x)
-            return calc.result
-        elif raddeg == 2:
+        else:
             print("Enter an angle in Degrees to find Inverse Sine: ")
             x = enter_num()
             result = calc.inverse_sine(math.degrees(x))
@@ -164,13 +152,9 @@ def screen_options():
 
     elif Operation == 13:
         print("Inverse Cosine")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
-        if raddeg == 1:
+        if calc.degrees:
             print("Enter an angle in Radians to find Inverse Cosine: ")
-            x = enter_num()
-            calc.result = calc.inverse_cosine(x)
-            return calc.result
-        elif raddeg == 2:
+        else:
             print("Enter an angle in Degrees to find Inverse Cosine: ")
             x = enter_num()
             calc.result = calc.inverse_cosine(math.degrees(x))
@@ -178,13 +162,9 @@ def screen_options():
 
     elif Operation == 14:
         print("Inverse Tangent")
-        raddeg = calc.degrees
-        if raddeg == 1:
+        if calc.degrees:
             print("Enter an angle in Radians to find Inverse Tangent: ")
-            x = enter_num()
-            result = calc.inverse_tangent(calc.result)
-            return result
-        elif raddeg == 2:
+        else:
             print("Enter an angle in Degrees to find Inverse Tangent: ")
             x = enter_num()
             calc.result = calc.inverse_tangent(math.degrees(x))
