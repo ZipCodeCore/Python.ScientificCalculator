@@ -14,11 +14,10 @@ class Calculator:
     def err(self):
         self.error = True
 
-    def eval_function(self, x: str): -> float
+    def eval_function(self, x: str) -> float:
         """
         evaluates x to return a result
         """
-        print(eval(x))
         return eval(x)
 
 

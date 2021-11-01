@@ -227,7 +227,8 @@ def screen_options():
     elif Operation == 20:
         print("Evaluate")
         x = str(input("Enter what you would like evaluated: "))
-        return calc.eval_function(x)
+        calc.result = calc.eval_function(x)
+        return calc.result
 
     elif Operation == 21:
         condi = False
@@ -249,7 +250,7 @@ def choose_data_type():
         print(bin(int(calc.result)).replace("0b", ""))
         return bin(int(calc.result)).replace("0b", "")
     elif type_choice == 4:
-        print(oct(int(calc.resultt)))
+        print(oct(int(calc.result)))
         return oct(int(calc.result))
 
 
