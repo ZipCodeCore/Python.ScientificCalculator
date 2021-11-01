@@ -81,3 +81,27 @@ class TestCalculator(unittest.TestCase):
 
     def test_trig_units_mode_rad_to_deg(self):
         self.assertEqual(self.calculator.trig_units_mode_rad_to_deg(45), 2578.3100780887044)
+
+    def test_factorial(self):
+        self.assertEqual(self.calculator.factorial(5), 120)
+
+    def test_log(self):
+        self.assertEqual(self.calculator.log(45, 10), 1.6532125137753435)
+
+    def test_inverse_log(self):
+        self.assertEqual(self.calculator.inverse_log(3), 1000)
+
+    def test_inv_ln(self):
+        self.assertEqual(self.calculator.inv_ln(3), 20.085536923187668)
+
+    def test_pi(self):
+        self.assertEqual(self.calculator.pi(), 3.141592653589793)
+
+    def test_e(self):
+        self.assertEqual(self.calculator.e(), 2.718281828459045)
+
+
+""" runs the test case TestCalculator. executes each test method 
+    defined in the class and gives us the result."""
+if __name__ == "__main__":
+    unittest.main()
