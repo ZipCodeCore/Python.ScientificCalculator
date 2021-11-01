@@ -44,21 +44,18 @@ class Calculator:
         :param string_mode:
         :return:
         """
-        #binary=0
-        #counter=0
-        #temp=x
         if (string_mode == 'bin'):
-            # while (temp > 0):
-            # base = 2
-            # binary = ((temp % base))
-            # print(binary)
-            return str(bin(int(x)).replace("0b", ""))  # STATE TO BE MODIFIED AS NEEDED
+            return str(bin(int(x)).replace("0b", ""))
+
         elif (string_mode == 'dec'):
             return str(round(float(x), 2))
+
         elif (string_mode == 'oct'):
             return str(oct(int(x)).replace("0o", ""))
+
         elif (string_mode == 'hex'):
             return str(hex(int(x)).replace("0x", ""))
+
         else:
             return str('invalid selection')
 
