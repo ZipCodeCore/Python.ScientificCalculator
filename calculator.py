@@ -5,11 +5,11 @@ class Calculator:
 
     def __init__(self):
 
-        error = False
-        result = 0
-        degrees = True
-        display_mode = "decimal"
-        stored_number = 0
+        self.error = False
+        self.result = 0
+        self.degrees = True
+        self.display_mode = "decimal"
+        self.stored_number = 0
 
     def err(self):
         self.error = True

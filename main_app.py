@@ -23,8 +23,8 @@ def screen_options():
     print("1: Add           8: Inverse              15: M+")
     print("2: Subtract      9: Sine                 16: MC")
     print("3: Multiply      10: Cosine              17: MRC")
-    print("4: Divide        11: Tangent             18: Exit")
-    print("5: Square        12: Inverse Sine")
+    print("4: Divide        11: Tangent             18: Swap")
+    print("5: Square        12: Inverse Sine        19: Exit")
     print("6: Square Root   13: Inverse Consine")
     print("7: Exponent      14: Inverse Tangent")
     print("")
@@ -107,17 +107,13 @@ def screen_options():
 
     elif Operation == 9:
         print("Sine")
-        raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
-        if raddeg == 1:
-            print("Enter an angle in Radians to find Sine: ")
-            x = enter_num()
-            calc.result = calc.sine(x)
-            return calc.result
-        elif raddeg == 2:
-            print("Enter an angle in Degrees to find Sine: ")
-            x = enter_num()
-            calc.result = calc.sine(math.degrees(x))
-            return calc.result
+        if calc.degrees:
+            print("Enter a number in degrees to find Sine: ")
+        else:
+            print("Enter a number in radians to find Sine: ")
+        x = enter_num()
+        calc.result = calc.sin(x)
+        return calc.result
 
 
     elif Operation == 10:
@@ -134,6 +130,7 @@ def screen_options():
             calc.result = calc.cosine(math.degrees(x))
             return calc.result
 
+
     elif Operation == 11:
         print("Tangent")
         raddeg = int(input("For Radians: Enter 1; For Degrees: Enter 2: "))
@@ -147,6 +144,7 @@ def screen_options():
             x = enter_num()
             calc.result = calc.tangent(math.degrees(x))
             return calc.result
+
 
     elif Operation == 12:
         print("Inverse Sine")
@@ -214,6 +212,14 @@ def screen_options():
         return calc.stored_number
 
     elif Operation == 18:
+        calc.deg_rad_swap()
+        if calc.degrees:
+            return ("You are in degrees mode")
+        else:
+            return ("You are in radiants mode")
+
+
+    elif Operation == 19:
         condi = False
         print("Thank you for pushing my buttons!")
 
