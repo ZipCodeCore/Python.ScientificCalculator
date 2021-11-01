@@ -1,9 +1,5 @@
 import math
-
-
 class Calculator:
-
-
 
     def __init__(self):
         memory = 0.0
@@ -106,8 +102,8 @@ class Calculator:
     def trig_units_mode_rad_to_deg(self, x):
         return math.degrees(x)
 
-    def factorial(self,x ):
-        return math.factorial(self.state)
+    def factorial(self,x):
+        return math.factorial(x)
 
     def log(self, x, base):
         return math.log(x,base)
@@ -116,7 +112,7 @@ class Calculator:
         return 10**x
 
     def ln(self, x):
-        return math.ln(x)
+        return math.log(x)
 
     def inv_ln(self,x):
         return math.exp(x)
@@ -138,6 +134,4 @@ class Calculator:
         memory=0
         return memory
 
-    def mrecall(self):
-        return memory
 

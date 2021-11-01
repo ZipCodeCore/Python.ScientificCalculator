@@ -1,14 +1,12 @@
 from calculator import Calculator
-import math
 
 def getTwoNumbers():
     a = float(input("first number? "))
     b = float(input("second number? "))
     return a, b
 
-
 def getOneNumber():     # get one number instead
-    a = float(input("first number? "))
+    a = float(input("Number? "))
     return a
 
 def switchDisplayModeInput(): #added by KB
@@ -45,26 +43,31 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
     print("7 : Variable Exponentiation \t   23 : Log x")
     print("8 : Inverse of Display  \t       24 : 10 power x - Inverse nog")
     print("9 : Invert Sign (+/-)\t           25 : Ln x - Natural log")
-    print("10 : Switch Display\t                     26 : e power x - Inverse natural log")
-    print("11 : M+ \t\t                       27 : Pi")
-    print("12 : MC \t\t                       28 : Exponentiation constant")
-    print("13 : MRC \t\t                       29: Quit")
-    print("14 : Sine")
+    print("10 : Switch Display\t              26 : e power x - Inverse natural log")
+    print("11 : M+ \t                       27 : Pi constant")
+    print("12 : MC \t                       28 : e constant")
+    print("13 : MRC \t                       29: Clear")
+    print("14 : Sine\t                      30: Quit")
     print("15 : Cosine")
     print("16 : Tangent")
     print('~' * 70)
 
+    temp_display = 0
+    print("DISPLAY:")
+    print(temp_display)
+
     memory = 0.0
 
     while True:
+
         try:
             choice = input("Enter number to choose your operation:\n")
+
         except:
             print("Please enter a valid number.")
 
-        if choice == '20':
-            print("Thanks for stopping by, have a great day.")
-            break  # user types q to quit calulator.
+        if choice == '30':
+            break
 
         elif choice == '1':
             a, b = getTwoNumbers()
@@ -84,10 +87,11 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
         elif choice == '4':
             a, b = getTwoNumbers()
             if b == 0:
-                print("\nDISPLAY:\nErr")
+                temp_display = "Err"
+                displayResult(temp_display)
             else:
                 temp_display = calc.div(a, b)
-            displayResult(temp_display)
+                displayResult(temp_display)
 
         elif choice == '5':
             a = getOneNumber()
@@ -122,19 +126,20 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
             displayResult(calc.switchDisplayMode(a,temp_display))
 
         elif choice == '11': #added by KB
-            displayResult(calc.madd(temp_display))
-            memory = calc.madd(temp_display)
-            return memory
+            displayResult(calc.madd(temp_display,memory))
+            memory = calc.madd(temp_display, memory)
+            #return memory
 
-        elif choice == '12''MC': #added by KB
+        elif choice == '12': #added by KB
             displayResult(calc.mclear())
             memory = calc.mclear()
-            return memory
+            #return memory
 
-        elif choice == '13''MRC': #added by KB
-            displayResult(calc.mrecall())
-            memory = calc.mrecall()
-            return memory
+        elif choice == '13': #added by KB
+            displayResult(memory)
+            #displayResult(calc.mrecall(memory))
+            #memory = calc.mrecall(memory)
+            #return memory
 
         elif choice == '14': #added by KB
             a = trig_units_mode_input()
@@ -225,7 +230,7 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
         elif choice == '22':# added by KB
             x = getOneNumber()
             temp_display = calc.factorial(x)
-            print(displayResult(temp_display))
+            displayResult(temp_display)
 
         elif choice =='23':# added by KB
             print("Enter your number and base as prompted below\n")
@@ -250,11 +255,12 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
 
         elif choice == '27':# added by KB
             temp_display = calc.pi()
-            print(displayResult(temp_display))
+            displayResult(temp_display)
 
         elif choice == '28':# added by KB
             temp_display = calc.e()
-            print(displayResult(temp_display))
+            displayResult(temp_display)
+
 
 # main start
 def main():
