@@ -30,7 +30,6 @@ class Calculator:
         :param b:
         :return:
         """
-        print( a + b)
         return a + b
 
 
@@ -41,7 +40,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x - y)
         return x - y
 
 
@@ -52,7 +50,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x * y)
         return y * x
 
 
@@ -79,7 +76,6 @@ class Calculator:
         :param base:
         :return:
         """
-        print( base ** 2)
         return base ** 2
 
 
@@ -90,7 +86,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x ** y)
         return x ** y
 
 
