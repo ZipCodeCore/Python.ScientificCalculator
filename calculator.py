@@ -30,7 +30,6 @@ class Calculator:
         :param b:
         :return:
         """
-        print( a + b)
         return a + b
 
 
@@ -41,7 +40,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x - y)
         return x - y
 
 
@@ -52,7 +50,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x * y)
         return y * x
 
 
@@ -79,7 +76,6 @@ class Calculator:
         :param base:
         :return:
         """
-        print( base ** 2)
         return base ** 2
 
 
@@ -90,7 +86,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x ** y)
         return x ** y
 
 
@@ -146,8 +141,10 @@ class Calculator:
         :return:
         """
         if self.degrees:
-            x = math.radians(x)
-        return math.cos(x)
+            x = math.degrees(math.cos(x))
+        else:
+            x = math.cos(x)
+        return x
 
     def tangent(self, x):
         """
@@ -156,8 +153,10 @@ class Calculator:
         :return:
         """
         if self.degrees:
-            x = math.radians(x)
-        return math.tan(x)
+            x = math.degrees(math.tan(x))
+        else:
+            x = math.tan(x)
+        return x
 
     def inverse_sine(self, x):
         """
@@ -166,8 +165,10 @@ class Calculator:
         :return:
         """
         if self.degrees:
-            x = math.radians(x)
-        return math.asin(x)
+            x = math.degrees(math.asin(x))
+        else:
+            x = math.asin(x)
+        return x
 
     def inverse_cosine(self, x):
         """
@@ -176,8 +177,10 @@ class Calculator:
         :return:
         """
         if self.degrees:
-            x = math.radians(x)
-        return math.acos(x)
+            x = math.degrees(math.acos(x))
+        else:
+            x = math.acos(x)
+        return x
 
     def inverse_tangent(self, x):
         """
@@ -186,8 +189,10 @@ class Calculator:
         :return:
         """
         if self.degrees:
-            x = math.radians(x)
-        return math.atan(x)
+            x = math.degrees(math.atan(x))
+        else:
+            x = math.atan(x)
+        return x
 
     ##SECONDARY FORMULAS
 
