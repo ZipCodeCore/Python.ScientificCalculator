@@ -24,3 +24,18 @@ class TestCalculator(unittest.TestCase):
 
     def test_div(self):
         self.assertEqual(self.calculator.div(10, 2), 5)
+
+    def test_sq(self):
+        self.assertEqual(self.calculator.sq(2), 4)
+
+    def test_sqrt(self):
+        self.assertEqual(self.calculator.sqrt(4), 2)
+
+    def test_varexp(self):
+        self.assertEqual(self.calculator.varexp(10, 2), 100)
+
+    def test_inverse(self):
+        self.assertEqual(self.calculator.inverse(10), 0.1)
+
+    def test_invert_sign(self):
+        self.assertEqual(self.calculator.invert_sign(10), -10)
