@@ -242,6 +242,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( self.result / x)
+
+        print(self.result / x)
         return self.result / x
+
 
