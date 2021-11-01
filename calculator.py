@@ -1,3 +1,6 @@
+import math
+
+
 class Calculator:
 
     def __init__(self):
@@ -7,6 +10,13 @@ class Calculator:
         return x + y
 
     def sub(self, x, y):
-        return 0
+        return x - y
 
-# add lots more methods to this calculator class.
+    def mult(self, x, y):
+        return x * y
+
+    def div(self, x, y):
+        if y == 0:
+            print(Err)
+        return x / y
+
