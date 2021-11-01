@@ -17,6 +17,8 @@ def enter_num():
     except:
         calc.err()
 
+
+
 ##Calculator Options
 
 def screen_options():
@@ -24,9 +26,9 @@ def screen_options():
     print("2: Subtract      9: Sine                 16: MC")
     print("3: Multiply      10: Cosine              17: MRC")
     print("4: Divide        11: Tangent             18: Swap")
-    print("5: Square        12: Inverse Sine        19: Exit")
-    print("6: Square Root   13: Inverse Consine")
-    print("7: Exponent      14: Inverse Tangent")
+    print("5: Square        12: Inverse Sine        19: Pi")
+    print("6: Square Root   13: Inverse Consine     20: Evaluate")
+    print("7: Exponent      14: Inverse Tangent     21: Exit")
     print("")
     Operation = int(input("Choose an operation: (Select the number) "))
 
@@ -218,8 +220,16 @@ def screen_options():
         else:
             return ("You are in radiants mode")
 
-
     elif Operation == 19:
+        print("PI = ")
+        return 3.14159265359
+
+    elif Operation == 20:
+        print("Evaluate")
+        x = str(input("Enter what you would like evaluated: "))
+        return calc.eval_function(x)
+
+    elif Operation == 21:
         condi = False
         print("Thank you for pushing my buttons!")
 
