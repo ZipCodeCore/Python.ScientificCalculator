@@ -262,6 +262,6 @@ class Calculator:
         if test == "CE":
             print("ce")
             self.error = False
-            result = 0
+            self.result = 0
 
 

@@ -77,25 +77,24 @@ def screen_options():
 
     elif Operation == 5:
         print("Square")
-        print("Enter the number: ")
-        base = enter_num()
-        calc.result = square(base)
-        return calc.result
-
-    elif Operation == 6:
-        print("Exponent")
-        print("Enter the base number: ")
-        x = enter_num()
-        print("Enter the exponent")
-        y = enter_num()
-        calc.result = calc.exp(x, y)
+        # print("Enter the number: ")
+        calc.result = calc.square(calc.result)
         return calc.result
 
     elif Operation == 7:
-        print("Square Root")
-        print("Enter the number: ")
+        print("Exponent")
+        print(f"Raise {calc.result} to the (enter number) power: ")
         x = enter_num()
-        calc.result = calc.square_root(x)
+        # print("Enter the exponent")
+        # y = enter_num()
+        calc.result = calc.exp(calc.result, x)
+        return calc.result
+
+    elif Operation == 6:
+        print("Square Root")
+        # print("Enter the number: ")
+        # x = enter_num()
+        calc.result = calc.square_root(calc.result)
         return calc.result
 
     elif Operation == 8:
