@@ -42,15 +42,10 @@ class Calculator:
         :param string_mode:
         :return:
         """
-        # binary=0
-        # counter=0
-        # temp=x
+
         if (string_mode == 'bin'):
-            # while (temp > 0):
-            # base = 2
-            # binary = ((temp % base))
-            # print(binary)
-            return str(bin(int(x)).replace("0b", ""))  # STATE TO BE MODIFIED AS NEEDED
+
+            return str(bin(int(x)).replace("0b", ""))
         elif (string_mode == 'dec'):
             return str(round(float(x), 2))
         elif (string_mode == 'oct'):
@@ -102,3 +97,29 @@ class Calculator:
 
     def trig_units_mode_rad_to_deg(self, x):
         return math.degrees(x)
+
+    def factorial(self,x ):
+        return math.factorial(x)
+
+    def log(self, x, base):
+        return math.log(x,base)
+
+    def inverse_log(self,x):
+        return 10**x
+
+    def inv_ln(self,x):
+        return math.exp(x)
+
+    def pi(self):
+        return math.pi
+
+    def e(self):
+        return math.e
+
+    def madd(self, x, memory):
+        memory = x + memory
+        return memory
+
+    def mclear(self):
+        memory=0
+        return memory
