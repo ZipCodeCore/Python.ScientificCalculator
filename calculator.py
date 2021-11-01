@@ -1,9 +1,25 @@
+
 import math
 
 class Calculator:
 
     def __init__(self):
+
+        self.error = False
+        self.result = 0
         self.degrees = True
+        self.display_mode = "decimal"
+        self.stored_number = 0
+
+    def err(self):
+        self.error = True
+
+    def eval_function(self, x: str) -> float:
+        """
+        evaluates x to return a result
+        """
+        return eval(x)
+
 
 
     def add(self, a, b):
@@ -40,14 +56,20 @@ class Calculator:
 
 
     def divide(self, x, y):
+
         """
         DIVIDES TWO NUMBERS AND RETURNS RESULT
         :param x:
         :param y:
         :return:
         """
-        print( x / y)
-        return x / y
+        try:
+            result = x / y
+        except:
+            result = "Err"
+            self.err()
+
+        return result
 
 
     def square(self, base):
@@ -72,6 +94,31 @@ class Calculator:
 
 
     def square_root(self, x):
+        """
+        FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
+        :param x:
+        :return:
+        """
+        try:
+            print(math.sqrt(x))
+        except:
+            self.err()
+            return "Err"
+        return math.sqrt(x)
+
+
+    def inv(self, x):
+        """
+        INVERSES A NUMBER AND RETURNS RESULT
+        :param x:
+        :return:
+        """
+        try:
+            result = 1/x
+        except:
+            self.err()
+            return "Err"
+        print(1 / x)
         """
         FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
         :param x:
@@ -165,8 +212,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result + x)
-        return returned_result + x
+        print(self.result + x)
+        return self.result + x
 
 
     def subtract2(self, x):
@@ -175,8 +222,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result - x)
-        return returned_result - x
+        print(self.result - x)
+        return self.result - x
 
 
     def multiply2(self, x):
@@ -185,8 +232,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result * x)
-        return returned_result * x
+        print( self.result * x)
+        return self.result * x
 
 
     def divide2(self, x):
@@ -195,5 +242,11 @@ class Calculator:
         :param x:
         :return:
         """
+
         print( returned_result / x)
         return returned_result / x
+
+        print( self.result / x)
+        return self.result / x
+
+
