@@ -10,6 +10,7 @@ class Calculator:
         self.degrees = True
         self.display_mode = "decimal"
         self.stored_number = 0
+        self.exit = False
 
     def err(self):
         self.error = True
@@ -119,23 +120,7 @@ class Calculator:
             self.err()
             return "Err"
         print(1 / x)
-        """
-        FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
-        :param x:
-        :return:
-        """
-        print( x ** (1 / 2))
-        return x ** (1 / 2)
 
-
-    def inverse(self, x):
-        """
-        INVERSES A NUMBER AND RETURNS RESULT
-        :param x:
-        :return:
-        """
-        print( 1 / x)
-        return 1 / x
 
     def deg_rad_swap(self):
         """
