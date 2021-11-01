@@ -243,10 +243,7 @@ class Calculator:
         :return:
         """
 
-        print( returned_result / x)
-        return returned_result / x
-
-        print( self.result / x)
+        print(self.result / x)
         return self.result / x
 
 
