@@ -54,6 +54,7 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
     print("16 : Tangent")
     print('~' * 70)
 
+    memory = 0.0
 
     while True:
         try:
@@ -120,13 +121,20 @@ def performCalcLoop(calc, temp_display): # KB - removed none assignment to temp_
             a = switchDisplayModeInput()
             displayResult(calc.switchDisplayMode(a,temp_display))
 
-        #elif choice == 'M+':
-        #elif choice == '11':
+        elif choice == '11': #added by KB
+            displayResult(calc.madd(temp_display))
+            memory = calc.madd(temp_display)
+            return memory
 
+        elif choice == '12''MC': #added by KB
+            displayResult(calc.mclear())
+            memory = calc.mclear()
+            return memory
 
-        #elif choice == '12''MC':
-
-        #elif choice == '13''MRC':
+        elif choice == '13''MRC': #added by KB
+            displayResult(calc.mrecall())
+            memory = calc.mrecall()
+            return memory
 
         elif choice == '14': #added by KB
             a = trig_units_mode_input()

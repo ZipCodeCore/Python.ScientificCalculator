@@ -1,8 +1,12 @@
 import math
 
+
 class Calculator:
 
+
+
     def __init__(self):
+        memory = 0.0
         pass
 
     def add(self, x, y):
@@ -125,3 +129,15 @@ class Calculator:
 
     def e(self):
         return math.e
+
+    def madd(self, x, memory):
+        memory = x + memory
+        return memory
+
+    def mclear(self):
+        memory=0
+        return memory
+
+    def mrecall(self):
+        return memory
+
