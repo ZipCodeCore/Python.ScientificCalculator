@@ -5,13 +5,26 @@ class Calculator:
 
     def __init__(self):
 
-        error = False
-        value = 0
+        self.error = False
+        self.result = 0
+        self.degrees = True
+        self.display_mode = "decimal"
+        self.stored_number = 0
+        self.exit = False
 
     def err(self):
         self.error = True
 
-        self.degrees = True
+    def eval_function(self, x: str):
+        """
+        evaluates x to return a result
+        """
+        try:
+            result = eval(x)
+            return result
+        except:
+            self.err()
+            return "Err"
 
 
 
@@ -22,7 +35,6 @@ class Calculator:
         :param b:
         :return:
         """
-        print( a + b)
         return a + b
 
 
@@ -33,7 +45,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x - y)
         return x - y
 
 
@@ -44,7 +55,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x * y)
         return y * x
 
 
@@ -61,6 +71,7 @@ class Calculator:
         except:
             result = "Err"
             self.err()
+            return result
 
         return result
 
@@ -71,7 +82,6 @@ class Calculator:
         :param base:
         :return:
         """
-        print( base ** 2)
         return base ** 2
 
 
@@ -82,7 +92,6 @@ class Calculator:
         :param y:
         :return:
         """
-        print( x ** y)
         return x ** y
 
 
@@ -100,7 +109,7 @@ class Calculator:
         return math.sqrt(x)
 
 
-    def inv(self, x):
+    def invert(self, x):
         """
         INVERSES A NUMBER AND RETURNS RESULT
         :param x:
@@ -108,27 +117,11 @@ class Calculator:
         """
         try:
             result = 1/x
+            return result
         except:
             self.err()
             return "Err"
-        print(1 / x)
-        """
-        FINDS THE SQUARE ROOT OF A NUMBER AND RETURNS RESULT
-        :param x:
-        :return:
-        """
-        print( x ** (1 / 2))
-        return x ** (1 / 2)
 
-
-    def inverse(self, x):
-        """
-        INVERSES A NUMBER AND RETURNS RESULT
-        :param x:
-        :return:
-        """
-        print( 1 / x)
-        return 1 / x
 
     def deg_rad_swap(self):
         """
@@ -143,9 +136,12 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.sin(x)
+        try:
+            if self.degrees:
+                x = math.radians(x)
+            return math.sin(x)
+        except:
+            return "Err"
 
     def cosine(self, x):
         """
@@ -153,9 +149,13 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.cos(x)
+        try:
+            if self.degrees:
+                x = math.radians(x)
+            x = math.cos(x)
+            return x
+        except:
+            return "Err"
 
     def tangent(self, x):
         """
@@ -163,9 +163,13 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.tan(x)
+        try:
+            if self.degrees:
+                x = math.radians(x)
+            x = math.tan(x)
+            return x
+        except:
+            return "Err"
 
     def inverse_sine(self, x):
         """
@@ -173,9 +177,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.asin(x)
+        try:
+            if self.degrees:
+                x = math.degrees(math.asin(x))
+            else:
+                x = math.asin(x)
+            return x
+        except:
+            return "Err"
 
     def inverse_cosine(self, x):
         """
@@ -183,9 +192,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.acos(x)
+        try:
+            if self.degrees:
+                x = math.degrees(math.acos(x))
+            else:
+                x = math.acos(x)
+            return x
+        except:
+            return "Err"
 
     def inverse_tangent(self, x):
         """
@@ -193,9 +207,14 @@ class Calculator:
         :param x:
         :return:
         """
-        if self.degrees:
-            x = math.radians(x)
-        return math.atan(x)
+        try:
+            if self.degrees:
+                x = math.degrees(math.atan(x))
+            else:
+                x = math.atan(x)
+            return x
+        except:
+            return "Err"
 
     ##SECONDARY FORMULAS
 
@@ -205,8 +224,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result + x)
-        return returned_result + x
+        print(self.result + x)
+        return self.result + x
 
 
     def subtract2(self, x):
@@ -215,8 +234,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result - x)
-        return returned_result - x
+        print(self.result - x)
+        return self.result - x
 
 
     def multiply2(self, x):
@@ -225,8 +244,8 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result * x)
-        return returned_result * x
+        # print( self.result * x)
+        return self.result * x
 
 
     def divide2(self, x):
@@ -235,6 +254,14 @@ class Calculator:
         :param x:
         :return:
         """
-        print( returned_result / x)
-        return returned_result / x
+
+        print(self.result / x)
+        return self.result / x
+
+    def clr(self,ce):
+        test = ce.upper()
+        if test == "CE":
+            self.error = False
+            self.result = 0
+
 
