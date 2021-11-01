@@ -341,7 +341,7 @@ while condi:
     print(f"Result: {returned_result}")
     choose_data_type()
     print("")
-    cont = (input("Do you want to clear memory? Y or N: ")).capitalize()
+    cont = (input("Do you continue with this number? Y or N: ")).capitalize()
     print("")
     if cont == "Y":
         condi2 = True
